@@ -51,8 +51,9 @@ Open a command prompt window. On Windows PCs, you can do this by typing 'cmd' in
 
 Within the command prompt window, type the following commands:
 
-`set path=c:\jogl25\lib;%path%
-set classpath=.;c:\jogl25\jar\jogl-all.jar;c:\jogl25\jar\gluegen-rt.jar;%classpath%`
+`set path=c:\jogl25\lib;%path%`
+
+`set classpath=.;c:\jogl25\jar\jogl-all.jar;c:\jogl25\jar\gluegen-rt.jar;%classpath%`
 
 Each of these set commands is on a single line. Do not add extra new lines. Also, there is only a blank space character after the word 'set'. Do not add in any extra blank spaces anywhere else on a line. Each entry in a set command should be separated by a semi-colon and no extra spaces. Make sure the command includes 'jogl-all.jar' and 'gluegen-rt.jar'. The '-' is important in both these names. Also, note the '.' at the beginning of the classpath. This is important.
 
@@ -67,6 +68,7 @@ Creating a batch file:
 Create a file called setupjogl25.bat (this is a text file) using your favourite text editor. Within this file, include the following lines:
 
 `set path=c:\jogl25\lib;%path%`
+
 `set classpath=.;c:\jogl25\jar\jogl-all.jar;c:\jogl25\jar\gluegen-rt.jar;%classpath%`
 
 Store setupjogl25.bat in the folder where you will develop your programs. Now, when you open a command prompt window in that folder, you can type 'setupjogl25' and it will carry out the commands stored in the batch file.
@@ -137,6 +139,7 @@ Open a terminal window.
 At the command prompt, type the following commands (updated to reflect wherever you have stored the jogl25 folder on your system):
 
 `export PATH=/Users/steve/jogl25/lib:$PATH`
+
 `export CLASSPATH=.:/Users/steve/jogl25/jar/jogl-all.jar:/Users/steve/jogl25/jar/gluegen-rt.jar:$CLASSPATH`
 
 Each of these export commands is on a single line. Also, there is only a blank space character after the word 'export'. Do not add in any extra blank spaces anywhere else on a line. Each entry in an export command should be separated by a colon and no extra spaces. Make sure the command includes 'jogl-all.jar' and 'gluegen-rt.jar'. The '-' is important in both these names. (Note: if there are any spaces in filenames, then the complete filename should be enclosed in quotes when setting path and classpath.) Also, note the '.' at the beginning of the classpath. This is important.
