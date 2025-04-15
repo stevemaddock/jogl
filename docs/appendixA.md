@@ -6,7 +6,7 @@
 
 I have used Java 11 to test the following. I cannot guarantee other versions of Java will work.
 
-(Update, Sep 2024: Tested for a Windows PC: it is possible to use a more recent version of Java. However, this involves using `"java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-opens java.desktop/sun.awt=ALL-UNNAMED --add-opens java.desktop/sun.awt.windows=ALL-UNNAMED ProgName"` to run your program once the class files have been created with javac. The reasons for this are discussed on the JOGL forum. I have not tested this on a Mac. May be easier to stick to using Java 11.)
+(Update, Sep 2024: Tested for a Windows PC: it is possible to use a more recent version of Java. However, this involves using `java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-opens java.desktop/sun.awt=ALL-UNNAMED --add-opens java.desktop/sun.awt.windows=ALL-UNNAMED ProgName` to run your program once the class files have been created with javac. The reasons for this are discussed on the JOGL forum. I have not tested this on a Mac. May be easier to stick to using Java 11.)
 
 ## Setting up
 
@@ -40,14 +40,14 @@ Steps:
 - Create the folder 'c:\jogl25'
 - Unzip the downloaded file 'jogamp-all-platforms.7z', which will create a subfolder called 'jogamp-all-platforms'
 - Copy the subfolder 'jogamp-all-platforms\jar' into 'c:\jogl25' to create 'c:\jogl25\jar' (Note: some of the files are not needed, but it is simpler to just copy everything.)
-- Make a subfolder called 'c:\jogl25\lib'
+- Make a subfolder called `c:\jogl25\lib`
 - Enter the subfolder 'jogamp-all-platforms\lib'. Now you must only copy relevant files. Within that folder open the 'windows-amd64' folder (yes even if you are on an Intel machine!!). Then copy all the files from here into `c:\jogl25\lib`.
 
 ### Step 3: Setting up your environment
 
 You must now add relevant files and folders to the system environment variables 'path' and 'classpath' so that when you compile and run Java programs the relevant files can be linked.
 
-Open a command prompt window. On Windows PCs, you can do this by typing 'cmd' in the title bar of a Windows explorer window.
+Open a command prompt window. On Windows PCs, you can do this by typing `cmd` in the title bar of a Windows explorer window.
 
 Within the command prompt window, type the following commands:
 
@@ -65,21 +65,24 @@ You're now ready for step 4. Before that a note on how to create a batch file fo
 
 Creating a batch file:
 
-Create a file called setupjogl25.bat (this is a text file) using your favourite text editor. Within this file, include the following lines:
+Create a file called `setupjogl25.bat` (this is a text file) using your favourite text editor. Within this file, include the following lines:
 
 `set path=c:\jogl25\lib;%path%`
 
 `set classpath=.;c:\jogl25\jar\jogl-all.jar;c:\jogl25\jar\gluegen-rt.jar;%classpath%`
 
-Store setupjogl25.bat in the folder where you will develop your programs. Now, when you open a command prompt window in that folder, you can type 'setupjogl25' and it will carry out the commands stored in the batch file.
+Store `setupjogl25.bat` in the folder where you will develop your programs. Now, when you open a command prompt window in that folder, you can type 'setupjogl25' and it will carry out the commands stored in the batch file.
 
 Setting up permanent environment variables on a Windows PC (if you have administrator rights):
 
 
 1. In Windows, the environment variables can be accessed by opening Windows Settings and typing 'Environment Variables' into the search area. This will launch a window where the 'Environment Variables…' button can be selected. In the User Variables section, check for an existing variable called CLASSPATH. If this does not exist, then create a new entry. Select the classpath variable and edit it. Add the full path for each of the previously mentioned jar files:
+
     `.;c:\jogl25\jar\jogl-all.jar;c:\jogl25\jar\gluegen-rt.jar`
+   
     (Note: It is the user environment variables that you are editing. The user environment variables are automatically appended to the system environment variables by the system. If you are the administrator of your machine, you could also edit the system variables if you wish. Note also that the drive name on your machine may be different to C:, so adapt the above list accordingly.)
-    (Another note: make sure there are no space characters in the classpath, otherwise your programs will fail to compile.)
+
+   (Another note: make sure there are no space characters in the classpath, otherwise your programs will fail to compile.)
 2. The lib folder also needs to be made available when compiling, as this folder contains the dll files for JOGL. Navigate to the environment variables again. This time, change (or add) a user variable called PATH. Add the full path of the lib folder to this path variable: c:\jogl25\lib   (Note that your drive name on your machine may be different to C:)
 
 ### Step 4: Running your first program
