@@ -16,7 +16,7 @@ Section 2.1 is specific to Java and requires some knowledge of how to build an i
 
 <p align="center">
   <img src="/ch2/img/A02_output.png" alt="output from A02" width="100"><br>
-  <strong>Figure 2.1.</strong> A single triangle
+  <strong>Figure 2.1.</strong> A single triangle.
 </p>
 
 <p></p>
@@ -27,7 +27,7 @@ Section 2.2 focuses on how to draw a single 2D triangle. The aim is to first use
 
 <p align="center">
   <img src="/ch2/img/A03_output.png" alt="output from A03" width="100">&nbsp;<img src="/ch2/img/A03_wireframe.jpg" alt="output from A03" width="100"><br>
-  <strong>Figure 2.2.</strong> (a) Two triangles; (b) The edges of two triangles
+  <strong>Figure 2.2.</strong> (a) Two triangles; (b) The edges of two triangles.
 </p>
 
 <p></p>
