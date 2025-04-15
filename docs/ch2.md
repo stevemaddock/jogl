@@ -32,7 +32,7 @@ Section 2.2 focuses on how to draw a single 2D triangle. The aim is to first use
 
 <p></p>
 
-Section 2.3 introduces Element Buffer Objects, which make it easier to manipulate and render multiple triangles. Figure 2.2 shows two triangles used to make a rectangle. This could easily be replaced with many triangles.
+Section 2.3 introduces Element Buffer Objects, which make it easier to manipulate and render multiple triangles. Figure 2.2 shows two triangles used to make a rectangle. This could easily be adapted to draw many triangles.
 
 # notes
 
