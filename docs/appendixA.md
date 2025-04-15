@@ -6,7 +6,7 @@
 
 I have used Java 11 to test the following. I cannot guarantee other versions of Java will work.
 
-(Update, Sep 2024: Tested for a Windows PC: it is possible to use a more recent version of Java. However, this involves using "java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-opens java.desktop/sun.awt=ALL-UNNAMED --add-opens java.desktop/sun.awt.windows=ALL-UNNAMED ProgName" to run your program once the class files have been created with javac. The reasons for this are discussed on the JOGL forum. I have not tested this on a Mac. May be easier to stick to using Java 11.)
+(Update, Sep 2024: Tested for a Windows PC: it is possible to use a more recent version of Java. However, this involves using `"java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-opens java.desktop/sun.awt=ALL-UNNAMED --add-opens java.desktop/sun.awt.windows=ALL-UNNAMED ProgName"` to run your program once the class files have been created with javac. The reasons for this are discussed on the JOGL forum. I have not tested this on a Mac. May be easier to stick to using Java 11.)
 
 ## Setting up
 
@@ -116,7 +116,7 @@ Most of this is similar to PC users, as described above, so I'll keep this relat
 - Follow the link for 'Builds/'
 - Find the heading 'Builds/Downloads'
 - Click on the link for 2.5.0 'zip' which takes you to a list of .7z files to download
-- Download 'jogamp-all-platforms.7z' (Direct link: (https://jogamp.org/deployment/jogamp-current/archive/))
+- Download 'jogamp-all-platforms.7z' ([Direct link](https://jogamp.org/deployment/jogamp-current/archive/))
 
 ### Step 2: Installation
 
