@@ -9,7 +9,7 @@ Initial examples to make sure jogl is setup correctly.
 
 <figure>
     <img src="/ch2/img/A02_output.png"
-         alt="rendered triangle" width="50">
+         alt="rendered triangle" width="100">
     <figcaption>Output from A02.java</figcaption>
 </figure>
   
