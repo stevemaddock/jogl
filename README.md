@@ -35,11 +35,11 @@ This can be done in a number of ways depending on how you intend to compile and 
 
 ### Step 1: Download JOGL
 
-- Visit the jogamp site
+- Visit the jogamp site: (https://jogamp.org/jogl/www/)
 - Follow the link for 'Builds/'
 - Find the heading 'Builds/Downloads'
 - Click on the link for 2.5.0 'zip' which takes you to a list of .7z files to download
-- Download 'jogamp-all-platforms.7z' (Direct link)
+- Download 'jogamp-all-platforms.7z' (Direct link: (https://jogamp.org/deployment/jogamp-current/archive/))
 
 ### Step 2: Installation
 
