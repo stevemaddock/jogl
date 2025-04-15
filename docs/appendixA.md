@@ -161,6 +161,7 @@ Open a terminal window in your working folder. Set up the jogl links - see Step 
 Now that you have opened a terminal window and have set up the jogl links, you are ready to run programs. As an example, using Chapter 2 of the downloaded code:
 
 `prompt% javac A01.java`
+
 `prompt% java A01`
 
 You can list all the environment variables on a Mac by typing 'env' at the prompt.
