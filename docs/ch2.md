@@ -22,6 +22,6 @@ Section 2.3 introduces Element Buffer Objects, which make it easier to manipulat
 
 - A01.java - open an empty window
 - A02.java - draw a 2D triangle using vertex list <img src="/ch2/img/A02_output.png" alt="output from A02" width="100">
-- A03.java - draw a 2D triangle using indices to the vertex list <img src="/ch2/img/A03_output.png" alt="output from A03" width="100">
+- A03.java - draw two 2D triangles using indices to the vertex list <img src="/ch2/img/A03_output.png" alt="output from A03" width="100">
 
 [back](../README.md)
