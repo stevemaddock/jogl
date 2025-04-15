@@ -1,6 +1,6 @@
 [back](../README.md)
 
-# ch2
+# Chapter 2. Rendering triangles
 
 Initial examples to make sure jogl is setup correctly.
 
