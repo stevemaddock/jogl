@@ -1,3 +1,5 @@
+[back](../README.md)
+
 # Appendix A
 
 ## Java version
@@ -99,3 +101,5 @@ Now that you have opened a command line window and have set up the jogl links, y
 (Note: To change drive in a command prompt window you type the drive name followed by a colon, e.g. D:. To change folder, use cd folder_name. To move back a level in the folder hierarchy, use cd ..)
 
 (Optional: You can clean up the lib and jar folders if you wish by deleting all the joal.* and jocl.* files as these are not required. Other files can also be deleted from the jar folder depending on which platform you are working on. For example, if you are working on the windows desktop, then all you need are the following: gluegen.jar, gluegen-rt.jar, gluegen-rt-natives-windows-amd64.jar, gluegen-rt-natives-windows-i586.jar, jogl-all.jar, jogl-all-natives-windows-amd64.jar, jogl-all-natives-windows-i586.jar)
+
+[back](../README.md)
