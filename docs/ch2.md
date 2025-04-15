@@ -19,7 +19,7 @@ Section 2.1 is specific to Java and requires some knowledge of how to build an i
   <figcaption><strong>Figure 2.1.</strong> A single triangle</figcaption>
 </figure>
 
-<br>
+<p></p>
 
 [This is a comment that will be hidden.]: # 
 
