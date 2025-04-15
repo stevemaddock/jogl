@@ -17,7 +17,9 @@ Section 2.1 is specific to Java and requires some knowledge of how to build an i
 <figure>
   <img src="/ch2/img/A02_output.png" alt="output from A02" width="100" style="margin-left: 20px;">
   <figcaption><strong>Figure 2.1.</strong> A single triangle</figcaption>
-</figure><br>
+</figure>
+
+<br>
 
 [This is a comment that will be hidden.]: # 
 
