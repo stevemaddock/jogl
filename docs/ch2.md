@@ -14,8 +14,8 @@ This chapter is composed of three main sections:
 
 Section 2.1 is specific to Java and requires some knowledge of how to build an interface using the Java Swing classes. If you have not used these before, it would be useful to work through [Oracle's Java tutorial on Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html).
 
-<figure>
-  <img src="/ch2/img/A02_output.png" alt="output from A02" width="100" align="center">
+<figure align="center">
+  <img src="/ch2/img/A02_output.png" alt="output from A02" width="100">
   <figcaption><strong>Figure 2.1.</strong> A single triangle</figcaption>
 </figure>
 
