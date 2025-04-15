@@ -29,7 +29,7 @@ This can be done in a number of ways depending on how you intend to compile and 
 - Follow the link for 'Builds/'
 - Find the heading 'Builds/Downloads'
 - Click on the link for 2.5.0 'zip' which takes you to a list of .7z files to download
-- Download 'jogamp-all-platforms.7z' (Direct link: (https://jogamp.org/deployment/jogamp-current/archive/))
+- Download 'jogamp-all-platforms.7z' ([Direct link](https://jogamp.org/deployment/jogamp-current/archive/))
 
 ### Step 2: Installation
 
@@ -41,7 +41,7 @@ Steps:
 - Unzip the downloaded file 'jogamp-all-platforms.7z', which will create a subfolder called 'jogamp-all-platforms'
 - Copy the subfolder 'jogamp-all-platforms\jar' into 'c:\jogl25' to create 'c:\jogl25\jar' (Note: some of the files are not needed, but it is simpler to just copy everything.)
 - Make a subfolder called 'c:\jogl25\lib'
-- Enter the subfolder 'jogamp-all-platforms\lib'. Now you must only copy relevant files. Within that folder open the 'windows-amd64' folder (yes even if you are on an Intel machine!!). Then copy all the files from here into c:\jogl25\lib.
+- Enter the subfolder 'jogamp-all-platforms\lib'. Now you must only copy relevant files. Within that folder open the 'windows-amd64' folder (yes even if you are on an Intel machine!!). Then copy all the files from here into `c:\jogl25\lib`.
 
 ### Step 3: Setting up your environment
 
@@ -86,7 +86,7 @@ Setting up permanent environment variables on a Windows PC (if you have administ
 
 First, make sure you have Java 11 installed on your machine. If not download it and install it first. This is the version I have tested with JOGL. Once downloaded, make sure your system 'path' variable links to the Java 11 install folder. You may need to edit the system environment variable 'path' - see above for instructions on editing the path variable. You could use the approach above to temporarily add it to the system path variable.
 
-(Note: multiple versions of Java can exist on a system, since they are installed in different folders when downloaded. I have at least three different versions of Java on my machine. I sometimes use batch files to make use of specific Java versions to save having to edit the system path variable to alter the Java version used. Example: javac11.bat contains the line "C:\Program Files\Java\jdk-11\bin\javac" %1 which will call the java 11 compiler for the provided filename, e.g. javac11 ProgName. Similarly, you could use the -classpath option (https://docs.oracle.com/javase/6/docs/technotes/tools/windows/javac.html) to look up classes rather than alter a classpath variable.)
+(Note: multiple versions of Java can exist on a system, since they are installed in different folders when downloaded. I have at least three different versions of Java on my machine. I sometimes use batch files to make use of specific Java versions to save having to edit the system path variable to alter the Java version used. Example: javac11.bat contains the line "C:\Program Files\Java\jdk-11\bin\javac" %1 which will call the java 11 compiler for the provided filename, e.g. javac11 ProgName. Similarly, you could use the -classpath option [oracle](https://docs.oracle.com/javase/6/docs/technotes/tools/windows/javac.html) to look up classes rather than alter a classpath variable.)
 
 You can check which version of Java you are using, by typing 'javac -version' and 'java -version' at the Windows command window prompt.
 
