@@ -1,6 +1,6 @@
 # JOGL and Java
 
-## Documentation for all the programs
+## Tutorial
 
 - [Chapter 1. Introduction](docs/ch1.md)
 - [Chapter 2. Rendering triangles](docs/ch2.md)
