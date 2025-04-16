@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The practical work for com3503/com4503/com6503 will inolve creating an interactive 3D Computer Graphics program using Java and JOGL. The material given below will teach you how to install and use JOGL. 
+The practical work for com3503/com4503/com6503 will inolve creating an interactive 3D Computer Graphics program using Java and JOGL. The material given below will teach you how to install and use JOGL. Installation instructions are given for both Windows and Mac.
 
 ## Practial work
 
