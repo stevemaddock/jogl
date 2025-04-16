@@ -6,7 +6,7 @@ The practical work for com3503/com4503/com6503 will inolve creating an interacti
 
 Whilst OpenGL has been superceded by other developments (e.g. Vulkan, WebGPU, Metal, DirectX), learning OpenGL still gives you insights into the interplay between the CPU and the GPU when developing graphics software and there is still a lot of software that makes use of OpenGL. Also, of the modern APIs available, the relatively easier development path with OpenGL means quick results can be obtained. Java is used because most students will already have existing expertise with this language.
 
-## Practial work
+## Practical work
 
 - [Chapter 1. Introduction](docs/ch1.md)
 - [Chapter 2. Rendering triangles](docs/ch2.md)
