@@ -1,4 +1,4 @@
-# jogl
+# JOGL and Java
 
 ## Documentation for all the programs
 
