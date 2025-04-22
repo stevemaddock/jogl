@@ -4,9 +4,6 @@
 
 Please read [Joey's Hello Triangle example](https://learnopengl.com/Getting-started/Hello-Triangle) before continuing.
 
-Please read <a href="https://learnopengl.com/Getting-started/Hello-Triangle" target="_blank">Joey's Hello Triangle example</a> before continuing.
-target="_blank"
-
 You will need to install JOGL before you can do any practical work. Appendix A 'Installing JOGL' describes how to do this.
 
 This chapter is composed of three main sections:
