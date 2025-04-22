@@ -1,4 +1,4 @@
-[back](../README.md)
+[main menu](../README.md)
 
 # Chapter 2. Rendering triangles
 
@@ -8,8 +8,8 @@ You will need to install JOGL before you can do any practical work. Appendix A '
 
 This chapter is composed of three main sections:
 
-1. Creating a drawing surface
-2. Drawing a triangle
+1. [Creating a drawing surface](ch2_1.md)
+2. [Drawing a triangle](ch2_2.md)
 3. Element Buffer Objects
 
 Section 2.1 is specific to Java and requires some knowledge of how to build an interface using the Java Swing classes. If you have not used these before, it would be useful to work through [Oracle's Java tutorial on Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html).
@@ -40,4 +40,4 @@ Section 2.3 introduces Element Buffer Objects, which make it easier to manipulat
 - A02.java - draw a 2D triangle using vertex list <img src="/ch2/img/A02_output.png" alt="output from A02" width="100">
 - A03.java - draw two 2D triangles using indices to the vertex list <img src="/ch2/img/A03_output.png" alt="output from A03" width="100">
 
-[back](../README.md)
+[main menu](../README.md)
