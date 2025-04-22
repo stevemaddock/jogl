@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The practical work for com3503/com4503/com6503 will inolve creating an interactive 3D Computer Graphics program using Java and JOGL. The material given below will teach you how to install and use JOGL. Installation instructions are given for both Windows and Mac.
+The practical work for com3503/com4503/com6503 will involve creating an interactive 3D Computer Graphics program using Java and JOGL. The material given below will teach you how to install and use JOGL. Installation instructions are given for both Windows and Mac.
 
 Whilst OpenGL has been superceded by other developments (e.g. Vulkan, WebGPU, Metal, DirectX), learning OpenGL still gives you insights into the interplay between the CPU and the GPU when developing graphics software and there is still a lot of software that makes use of OpenGL. Also, of the modern APIs available, the relatively easier development path with OpenGL means quick results can be obtained. Java is used because most students will already have existing expertise with this language.
 
