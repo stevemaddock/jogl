@@ -8,7 +8,7 @@ You will need to install JOGL before you can do any practical work. Appendix A '
 
 This chapter is composed of three main sections:
 
-1. Creating a drawing surface
+1. [Creating a drawing surface](ch2_1.md)
 2. Drawing a triangle
 3. Element Buffer Objects
 
