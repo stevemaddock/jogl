@@ -2,7 +2,7 @@
 
 # Chapter 2. Rendering triangles
 
-Please read [Joey's Hello Triangle example](https://learnopengl.com/Getting-started/Hello-Triangle) before continuing.
+Please read [Joey's Hello Triangle example{:target="_blank"}](https://learnopengl.com/Getting-started/Hello-Triangle) before continuing.
 
 You will need to install JOGL before you can do any practical work. Appendix A 'Installing JOGL' describes how to do this.
 
