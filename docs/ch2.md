@@ -1,4 +1,4 @@
-[back](../README.md)
+[back](../README.md) [main](../README.md)
 
 # Chapter 2. Rendering triangles
 
