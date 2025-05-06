@@ -10,7 +10,7 @@ This chapter is composed of three main sections:
 
 1. [Creating a drawing surface](ch2_1.md)
 2. [Drawing a triangle](ch2_2.md)
-3. Element Buffer Objects
+3. [Element Buffer Objects](ch2_3.md)
 
 Section 2.1 is specific to Java and requires some knowledge of how to build an interface using the Java Swing classes. If you have not used these before, it would be useful to work through [Oracle's Java tutorial on Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html).
 
