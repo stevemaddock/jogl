@@ -17,6 +17,6 @@ I do not advocate a specific editor to develop your programs. I have used Visual
 
 ![A sequence of images from the tutorial](anim.gif)
 
-<img src="anim.gif" width="40" height="40">
+<img src="anim.gif" width="80">
 
 [main menu](../README.md)
