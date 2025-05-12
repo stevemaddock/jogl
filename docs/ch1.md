@@ -14,4 +14,7 @@ Screenshots of programs will be used in each Chapter to show what you should see
 
 I do not advocate a specific editor to develop your programs. I have used Visual Studio Code and Notepad++ when developing all the source code for the tutorial. When you hand in the assessed work for the module it must be possible to compile and run your program from the command line in a command window rather than have to rely on a specific IDE (which I may not have installed).
 
+
+![A sequence of images from the tutorial]()
+
 [main menu](../README.md)
