@@ -12,7 +12,7 @@ Java is used because the majority of students on the module will already have ex
 
 - [Chapter 1. Introduction](docs/ch1.md)
 - [Chapter 2. Rendering triangles](docs/ch2.md)
-- Chapter 3.
+- [Chapter 3. Shaders](docs/ch3.md)
 - Chapter 4.
 - Chapter 5.
 - Chapter 6.
