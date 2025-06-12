@@ -1,6 +1,6 @@
 [main menu](../README.md)
 
-# Chapter 4. Textures
+# Chapter 8. Refinements
 
 
 [main menu](../README.md)

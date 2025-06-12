@@ -1,6 +1,6 @@
 [main menu](../README.md)
 
-# Chapter 4. Textures
+# Chapter 6. Lighting
 
 
 [main menu](../README.md)
