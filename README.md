@@ -13,10 +13,11 @@ Java is used because the majority of students on the module will already have ex
 - [Chapter 1. Introduction](docs/ch1.md)
 - [Chapter 2. Rendering triangles](docs/ch2.md)
 - [Chapter 3. Shaders](docs/ch3.md)
-- Chapter 4.
-- Chapter 5.
-- Chapter 6.
-- Chapter 7.
-- Chapter 8.
-- Chapter 9.
+- [Chapter 4. Textures](docs/ch4.md)
+- [Chapter 5. Transformations, coordinate systems and a camera](docs/ch5.md)
+- [Chapter 6. Lighting](docs/ch6.md)
+- [Chapter 7. A set of classes](docs/ch7.md)
+- [Chapter 8. Scene graphs](docs/ch8.md)
+- [Chapter 9. Refinements / Extras](docs/ch9.md)
+- [Chapter 10. Summary](docs/ch10.md)
 - [Appendix A. Installing JOGL](docs/appendixA.md)
