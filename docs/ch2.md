@@ -10,10 +10,10 @@ This chapter is composed of three main sections:
 2. [Drawing a triangle](ch2_2.md)
 3. [Element Buffer Objects](ch2_3.md)
 
-Section 2.1 is specific to Java and requires some knowledge of how to build an interface using the Java Swing classes. If you have not used these before, it would be useful to work through [Oracle's Java tutorial on Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html). The aim of thios section is to make sure JOGL is linking correctly and that a drawing surface can be created. The result is a window displaying a black rectangle!!
+Section 2.1 is specific to Java and requires some knowledge of how to build an interface using the Java Swing classes. If you have not used these before, it would be useful to work through [Oracle's Java tutorial on Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html). The aim of this section is to make sure JOGL is linking correctly and that a drawing surface can be created. The result is a window displaying a black rectangle!!
 
 <p align="center">
-  <img src="img_ch2/A02_output.png" alt="output from A02" width="100"><br>
+  <img src="ch2_img/A02_output.png" alt="output from A02" width="100"><br>
   <strong>Figure 2.1.</strong> A single triangle.
 </p>
 
