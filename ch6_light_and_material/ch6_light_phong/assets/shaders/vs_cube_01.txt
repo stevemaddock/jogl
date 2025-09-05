@@ -1,0 +1,26 @@
+#version 330 core
+
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 normal;
+layout (location = 2) in vec2 texCoord;
+
+out vec3 aPos;
+out vec3 aNormal;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+uniform mat4 mvpMatrix;
+uniform mat4 tiModel;
+
+void main() {
+  // mat4 mvpMatrix2 = projection * view * model;
+  // gl_Position = mvpMatrix2 * vec4(position, 1.0);
+  
+  gl_Position = mvpMatrix * vec4(position, 1.0);
+  aPos = vec3(model*vec4(position, 1.0f));
+  
+  // aNormal = mat3(tiModel) * normal;  
+  
+  aNormal = mat3(transpose(inverse(model))) * normal;
+}
