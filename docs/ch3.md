@@ -18,7 +18,7 @@ Section 3.3 separates out the shader code into a separate class. This simplifies
 
 
 <p align="center">
-  <img src="ch3_img/S01.png" alt="output from S01" width="100">img src="ch3_img/S02.png" alt="output from S02" width="100"><img src="ch3_img/S03.png" alt="output from S03" width="100"><img src="ch3_img/S04.png" alt="output from S04" width="100"><img src="ch3_img/S05.png" alt="output from S05" width="100"><br>
+  <img src="ch3_img/S01.png" alt="output from S01" width="100"><img src="ch3_img/S02.png" alt="output from S02" width="100"><img src="ch3_img/S03.png" alt="output from S03" width="100"><img src="ch3_img/S04.png" alt="output from S04" width="100"><img src="ch3_img/S05.png" alt="output from S05" width="100"><br>
   <strong>Figure 3.0.</strong> Output from programs S01, S02, S03, S04, S05.
 </p>
 
