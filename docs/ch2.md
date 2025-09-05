@@ -24,7 +24,7 @@ Section 2.1 is specific to Java and requires some knowledge of how to build an i
 Section 2.2 focuses on how to draw a single 2D triangle on the drawing surface created in Section 2.1. The aim is to first use a simple triangle to understand all the 'housekeeping' that comes with writing an OpenGL program, i.e. transferring data from the CPU to the GPU and instructing the GPU to use that data. We will move on to 3D shapes in a later chapter. Initially, the focus will be on using a single colour for the triangle (Figure 2.1). Later we will look at multiple colours. We will refer to this process as 'rendering' the triangle and call the method that does the rendering 'render', accordingly. In later chapters, the term will have more meaning when we look at how to shade the surface of a triangle with respect to its relative position to a light source (or light sources) in 3D space. For now, we will ignore light sources and just fill in the triangle with a single colour.
 
 <p align="center">
-  <img src="img_ch2/A03_output.png" alt="output from A03" width="100">&nbsp;<img src="img_ch2/A03_wireframe.jpg" alt="output from A03" width="100"><br>
+  <img src="ch2_img/A03_output.png" alt="output from A03" width="100">&nbsp;<img src="ch2_img/A03_wireframe.jpg" alt="output from A03" width="100"><br>
   <strong>Figure 2.2.</strong> (a) Two triangles; (b) The edges of two triangles.
 </p>
 
