@@ -17,11 +17,11 @@ Section 3.2 focuses on how to dynamically alter some of the vertex data stored o
 Section 3.3 separates out the shader code into a separate class. This simplifies the main program listing since the same shader class can be used in each subsequent program. In later sections, we'll revisit the shader class as the complexity of programs increases and we need multiple different shaders for our programs.
 
 
-<img src="/ch3_img/S01.png" alt="output from S01" width="100">
-<img src="/ch3_img/S02.png" alt="output from S02" width="100">
-<img src="/ch3_img/S03.png" alt="output from S03" width="100">
-<img src="/ch3_img/S04.png" alt="output from S04" width="100">
-<img src="/ch3_img/S05.png" alt="output from S05" width="100">
+<img src="ch3_img/S01.png" alt="output from S01" width="100">
+<img src="ch3_img/S02.png" alt="output from S02" width="100">
+<img src="ch3_img/S03.png" alt="output from S03" width="100">
+<img src="ch3_img/S04.png" alt="output from S04" width="100">
+<img src="ch3_img/S05.png" alt="output from S05" width="100">
 
 
 [main menu](../README.md)
