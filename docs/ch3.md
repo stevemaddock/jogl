@@ -16,4 +16,6 @@ Section 3.2 focuses on how to dynamically alter some of the vertex data stored o
 
 Section 3.3 separates out the shader code into a separate class. This simplifies the main program listing since the same shader class can be used in each subsequent program. In later sections, we'll revisit the shader class as the complexity of programs increases and we need multiple different shaders for our programs.
 
+a bit more
+
 [main menu](../README.md)
