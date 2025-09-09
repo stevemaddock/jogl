@@ -21,7 +21,7 @@ Figure 6.1 summarises where we are at with regards the complexity of our program
 
 This chapter is composed of five main sections:
 
-1. [Lighting: ambient, diffuse, specular](ch6_1.md)
+1. [The Phong reflection model](ch6_1.md)
 2. [More on the Phong reflection model](ch6_2.md)
 3. [A Mesh class](ch6_3.md)
 4. [Adding texture](ch6_4.md)
