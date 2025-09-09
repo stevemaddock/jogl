@@ -8,16 +8,16 @@ import com.jogamp.opengl.util.awt.*;
 import com.jogamp.opengl.util.glsl.*;
 import com.jogamp.opengl.util.texture.*;
   
-public class L04_GLEventListener implements GLEventListener {
+public class L05_GLEventListener implements GLEventListener {
   
   private static final boolean DISPLAY_SHADERS = false;
   private Camera camera;
     
   /* The constructor is not used to initialise anything */
-  public L04_GLEventListener(Camera camera) {
+  public L05_GLEventListener(Camera camera) {
     this.camera = camera;
-    this.camera.setPosition(new Vec3(-6,8,12));
-    this.camera.setTarget(new Vec3(0,3,0));
+    this.camera.setPosition(new Vec3(-10,12,20));
+    this.camera.setTarget(new Vec3(0,5,0));
   }
   
   // ***************************************************
@@ -62,13 +62,22 @@ public class L04_GLEventListener implements GLEventListener {
     // gl.glDeleteBuffers(1, elementBufferId, 0);
   }
 
+  // interaction
+
+  public void setSmile(boolean smile) {
+    this.smile = smile;
+  }
+
   // ***************************************************
   /* THE SCENE
    * Now define all the methods to handle the scene.
    * This will be added to in later examples.
    */
 
+  public boolean smile = true;
+
   private Mesh cube;
+  public Mesh sphere;
   private Mesh light;
 
   private Vec3 cubeAmbient = new Vec3(1.0f, 0.5f, 0.31f);
@@ -76,11 +85,11 @@ public class L04_GLEventListener implements GLEventListener {
   private Vec3 cubeSpecular = new Vec3(0.5f, 0.5f, 0.5f);
   private float cubeShininess = 32.0f;
 
-  private Shader cubeShader, lightShader;
+  private Shader cubeShader, sphereShader, lightShader;
 
   // textures
   private TextureLibrary textures;
-  private Texture cubeDiffuseMap;
+  private Texture cubeDiffuseMap, sphereSmileDiffuseMap, sphereFrownDiffuseMap;
   private Texture cubeSpecularMap;
   private Texture cubeEmissionMap;
 
@@ -97,14 +106,21 @@ public class L04_GLEventListener implements GLEventListener {
     textures.add(gl, "chequerboard", "assets/textures/chequerboard.jpg");
     textures.add(gl, "cloud", "assets/textures/cloud.jpg");
     textures.add(gl, "emission", "assets/textures/matrix.jpg");
+    textures.add(gl, "smile", "assets/textures/smile.png");
+    textures.add(gl, "frown", "assets/textures/frown.png");
 
     cube = new Mesh(gl, Cube.vertices, Cube.indices);
+    sphere = new Mesh(gl, Sphere.vertices, Sphere.indices);
     light = new Mesh(gl, Sphere.vertices, Sphere.indices);
 
     cubeShader = new Shader(gl, "assets/shaders/vs_standard.txt", "assets/shaders/fs_standard_dse.txt");
     cubeDiffuseMap = textures.get("diffuse_container");
     cubeSpecularMap = textures.get("specular_container");
     cubeEmissionMap = textures.get("emission");
+
+    sphereShader = new Shader(gl, "assets/shaders/vs_standard.txt", "assets/shaders/fs_standard_d.txt");
+    sphereSmileDiffuseMap = textures.get("smile");
+    sphereFrownDiffuseMap = textures.get("frown");
 
     lightShader = new Shader(gl, "assets/shaders/vs_light_01.txt", "assets/shaders/fs_light_01.txt");
   }
@@ -119,6 +135,7 @@ public class L04_GLEventListener implements GLEventListener {
 
     renderLight(gl, lightShader, getLightModelMatrix(), viewMatrix, projectionMatrix);
     renderCube(gl, cubeShader, getCubeModelMatrix(), viewMatrix, projectionMatrix);
+    renderSphere(gl, sphereShader, getSphereModelMatrix(), viewMatrix, projectionMatrix);
 }
   
   // ***************************************************
@@ -181,6 +198,63 @@ public class L04_GLEventListener implements GLEventListener {
   }
 
   // **********************************
+  /* Rendering the sphere
+   */
+  private Mat4 getSphereModelMatrix() {
+    Mat4 modelMatrix = Mat4Transform.translate(0f,0.5f,0f);
+    modelMatrix = Mat4.multiply(Mat4Transform.scale(5f,5f,5f), modelMatrix);
+    modelMatrix = Mat4.multiply(Mat4Transform.rotateAroundY(180), modelMatrix);
+    modelMatrix = Mat4.multiply(Mat4Transform.translate(0f,4f,0f), modelMatrix);
+    return modelMatrix;
+  }
+
+  // same light properties
+  // use same material as cube, except for texture maps
+
+  private void renderSphere(GL3 gl, Shader shader, Mat4 modelMatrix, Mat4 viewMatrix, Mat4 projectionMatrix) {
+    Mat4 mvpMatrix = Mat4.multiply(projectionMatrix, Mat4.multiply(viewMatrix, modelMatrix));
+    
+    shader.use(gl);
+  
+    shader.setFloatArray(gl, "model", modelMatrix.toFloatArrayForGLSL());
+    shader.setFloatArray(gl, "mvpMatrix", mvpMatrix.toFloatArrayForGLSL());
+    
+    shader.setVec3(gl, "viewPos", camera.getPosition());
+
+    shader.setVec3(gl, "light.position", lightPosition);
+    shader.setVec3(gl, "light.ambient", lightAmbient);
+    shader.setVec3(gl, "light.diffuse", lightDiffuse);
+    shader.setVec3(gl, "light.specular", lightSpecular);
+
+    shader.setVec3(gl, "material.ambient", cubeAmbient);
+    shader.setVec3(gl, "material.diffuse", cubeDiffuse);
+    shader.setVec3(gl, "material.specular", cubeSpecular);
+    shader.setFloat(gl, "material.shininess", cubeShininess);
+
+    Texture sphereDiffuseMap = sphereSmileDiffuseMap;
+    // if (!smile) {
+    //   sphereDiffuseMap = sphereFrownDiffuseMap;
+    // }
+
+    // alternative
+    if (lightPosition.z > 0) {
+      sphereDiffuseMap = sphereSmileDiffuseMap;
+    }
+    else {
+      sphereDiffuseMap = sphereFrownDiffuseMap;
+    }
+
+    if (sphereDiffuseMap!=null) {
+      shader.setInt(gl, "diffuse_texture", 0);  
+      gl.glActiveTexture(GL.GL_TEXTURE0);
+      sphereDiffuseMap.bind(gl);
+    }
+    // no specular or emission map for sphere
+
+    sphere.render(gl);
+  }
+
+  // **********************************
   /* Rendering the light as an object
    */
 
@@ -196,7 +270,7 @@ public class L04_GLEventListener implements GLEventListener {
   private Vec3 getLightPosition() {
     double elapsedTime = getSeconds()-startTime;
     float x = 5.0f*(float)(Math.sin(Math.toRadians(elapsedTime*50)));
-    float y = 5.4f;
+    float y = 3.4f;
     float z = 5.0f*(float)(Math.cos(Math.toRadians(elapsedTime*50)));
     return new Vec3(x,y,z);
   }

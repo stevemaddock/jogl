@@ -9,7 +9,7 @@ import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.util.FPSAnimator;
 
-public class L04 extends JFrame {
+public class L04 extends JFrame implements ActionListener {
   
   private static final int WIDTH = 1024;
   private static final int HEIGHT = 768;
@@ -37,6 +37,16 @@ public class L04 extends JFrame {
     canvas.addKeyListener(new MyKeyboardInput(camera));
     getContentPane().add(canvas, BorderLayout.CENTER);
 
+    JPanel p = new JPanel();
+      JButton b = new JButton("smile");
+      b.addActionListener(this);
+      p.add(b);
+      b = new JButton("frown");
+      b.addActionListener(this);
+      p.add(b);
+    this.add(p, BorderLayout.SOUTH);
+
+
     addWindowListener(new WindowAdapter() {
       public void windowClosing(WindowEvent e) {
         animator.stop();
@@ -47,6 +57,16 @@ public class L04 extends JFrame {
     });
     animator = new FPSAnimator(canvas, 60);
     animator.start();
+  }
+  
+  public void actionPerformed(ActionEvent e) {
+    if (e.getActionCommand().equalsIgnoreCase("smile")) {
+      glEventListener.setSmile(true);
+    }
+    else if (e.getActionCommand().equalsIgnoreCase("frown")) {
+      glEventListener.setSmile(false);
+    }
+
   }
 
 }
