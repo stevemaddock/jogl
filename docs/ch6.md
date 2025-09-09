@@ -19,23 +19,20 @@ Figure 6.1 summarises where we are at with regards the complexity of our program
 </p>
 
 
-This chapter is composed of five main sections:
+This chapter is composed of four main sections:
 
 1. [The Phong reflection model](ch6_1.md)
-2. [More on the Phong reflection model](ch6_2.md)
-3. [A Mesh class](ch6_3.md)
-4. [Adding texture](ch6_4.md)
-5. [Extra: posterise](ch6_5.md)
+2. [A Mesh class](ch6_2.md)
+3. [Adding texture](ch6_3.md)
+4. [Extra: posterise](ch6_4.md)
 
 The first section will introduce a light into the scene and describe the implementation of the components of the Phong reflection model in the fragment shader.
 
-The second section adds more about the Phong reflection model.
+The second section introduces a Mesh class for representing objects as a list of vertices and triangles. This will reduce the clutter and complication of the methods in the GLEventListener class.
 
-The third section will introduce a Mesh class fro represention objects as a list of vertices and triangles. This will reduce the clutter and complication of the methods in the GLEventListener class.
+The third section describes how to use textures on an object and the changes required to an object's fragment shader.
 
-The fourth section describes how to use textures on an object and the changes required to an object's fragment shader.
-
-The fifth section looks a specific effect that shows how to use the fragment shader to quantise the number of colours used in the final display of an object. This section is not needed for subsequent chapters.
+The fourth section looks a specific effect that shows how to use the fragment shader to quantise the number of colours used in the final display of an object. This section is not needed for subsequent chapters.
 
 ## Note
 

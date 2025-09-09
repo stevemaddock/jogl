@@ -84,8 +84,11 @@ public class L01_GLEventListener implements GLEventListener {
     gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
     Mat4 projectionMatrix = camera.getPerspectiveMatrix();
     Mat4 viewMatrix = camera.getViewMatrix();
+    Mat4 lightModelMatrix = getLightModelMatrix();  // side effect: changes global light position
+    renderLight(gl, shaderLight, lightModelMatrix, viewMatrix, projectionMatrix);
+    // renderCube requires global light position
     renderCube(gl, shaderCube, getCubeModelMatrix(), viewMatrix, projectionMatrix);
-    renderLight(gl, shaderLight, getLightModelMatrix(), viewMatrix, projectionMatrix);
+
   }
   
   // ***************************************************
@@ -123,7 +126,7 @@ public class L01_GLEventListener implements GLEventListener {
 
     shader.setFloat(gl, "objectColor", 1.0f, 0.5f, 0.31f);
     shader.setFloat(gl, "lightColor", 1f,1f,1f);
-    shader.setVec3(gl, "lightPos", lightPosition);
+    shader.setVec3(gl, "lightPos", lightPosition[lightIndex]);
     shader.setVec3(gl, "viewPos", camera.getPosition());
   
     gl.glBindVertexArray(vertexArrayId[0]);
@@ -132,29 +135,28 @@ public class L01_GLEventListener implements GLEventListener {
   }
 
   // **********************************
+  /* Interaction: light control
+   */
+
+  public void setLight(int index) {
+    // System.out.println("Light index set to: " + (index-1));
+    if (index >=1 && index <= 3) lightIndex = index-1;
+    else lightIndex = 0;
+  }
+
+  // **********************************
   /* Rendering the light as an object
    */
    
-  private Vec3 lightPosition = new Vec3(4f,5f,8f);
-  
+  private int lightIndex = 0;
+  private Vec3[] lightPosition = {new Vec3(4f,5f,8f), new Vec3(-10f,5f,0f), new Vec3(4f,5f,-8f)};
+
   private Mat4 getLightModelMatrix() {
     Mat4 modelMatrix = new Mat4(1);
     modelMatrix = Mat4.multiply(Mat4Transform.scale(0.3f,0.3f,0.3f), modelMatrix);
-    modelMatrix = Mat4.multiply(Mat4Transform.translate(lightPosition), modelMatrix);
+    modelMatrix = Mat4.multiply(Mat4Transform.translate(lightPosition[lightIndex]), modelMatrix);
     return modelMatrix;
   }
-  
-  // Alternative version for moving light
-  /* private Mat4 getLightModelMatrix() {
-    double elapsedTime = getSeconds()-startTime;
-    lightPosition.x = 5.0f*(float)(Math.sin(Math.toRadians(elapsedTime*50)));
-    lightPosition.y = 3.0f;
-    lightPosition.z = 5.0f*(float)(Math.cos(Math.toRadians(elapsedTime*50)));
-    Mat4 modelMatrix = new Mat4(1);
-    modelMatrix = Mat4.multiply(Mat4Transform.scale(0.3f,0.3f,0.3f), modelMatrix);
-    modelMatrix = Mat4.multiply(Mat4Transform.translate(lightPosition), modelMatrix);
-    return modelMatrix;
-  }*/
   
   private void renderLight(GL3 gl, Shader shader, Mat4 modelMatrix, Mat4 view, Mat4 projection) {
     Mat4 mvpMatrix = Mat4.multiply(projection, Mat4.multiply(view, modelMatrix));

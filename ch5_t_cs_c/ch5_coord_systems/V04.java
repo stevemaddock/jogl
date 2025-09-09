@@ -9,7 +9,7 @@ import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.util.FPSAnimator;
 
-public class V04 extends JFrame implements ActionListener{
+public class V04 extends JFrame implements ActionListener {
   
   private static final long serialVersionUID = 1L;
   

@@ -71,9 +71,6 @@ public class L02_GLEventListener implements GLEventListener {
    */
 
   public void initialise(GL3 gl) {
-    //shaderCube = new Shader(gl, "assets/shaders/vs_cube_01.txt", "assets/shaders/fs_cube_01.txt");
-    //shaderCube = new Shader(gl, "assets/shaders/vs_cube_01.txt", "assets/shaders/fs_cube_01_ambient.txt");
-    //shaderCube = new Shader(gl, "assets/shaders/vs_cube_01.txt", "assets/shaders/fs_cube_01_diffuse.txt");
     shaderCube = new Shader(gl, "assets/shaders/vs_cube_01.txt", "assets/shaders/fs_cube_01_specular.txt");
     shaderLight = new Shader(gl, "assets/shaders/vs_light_01.txt", "assets/shaders/fs_light_01.txt");
     fillBuffers(gl);
@@ -84,8 +81,11 @@ public class L02_GLEventListener implements GLEventListener {
     gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
     Mat4 projectionMatrix = camera.getPerspectiveMatrix();
     Mat4 viewMatrix = camera.getViewMatrix();
+    //Mat4 lightModelMatrix = getLightModelMatrix();  // side effect: changes global light position
+    Mat4 lightModelMatrix = getMovingLightModelMatrix(); // side effect: changes global light position
+    renderLight(gl, shaderLight, lightModelMatrix, viewMatrix, projectionMatrix);
+    // renderCube requires global light position
     renderCube(gl, shaderCube, getCubeModelMatrix(), viewMatrix, projectionMatrix);
-    renderLight(gl, shaderLight, getLightModelMatrix(), viewMatrix, projectionMatrix);
   }
   
   // ***************************************************
@@ -134,7 +134,7 @@ public class L02_GLEventListener implements GLEventListener {
   // **********************************
   /* Rendering the light as an object
    */
-   
+
   private Vec3 lightPosition = new Vec3(4f,5f,8f);
   
   private Mat4 getLightModelMatrix() {
@@ -145,7 +145,7 @@ public class L02_GLEventListener implements GLEventListener {
   }
   
   // Alternative version for moving light
-  /* private Mat4 getLightModelMatrix() {
+   private Mat4 getMovingLightModelMatrix() {
     double elapsedTime = getSeconds()-startTime;
     lightPosition.x = 5.0f*(float)(Math.sin(Math.toRadians(elapsedTime*50)));
     lightPosition.y = 3.0f;
@@ -154,7 +154,7 @@ public class L02_GLEventListener implements GLEventListener {
     modelMatrix = Mat4.multiply(Mat4Transform.scale(0.3f,0.3f,0.3f), modelMatrix);
     modelMatrix = Mat4.multiply(Mat4Transform.translate(lightPosition), modelMatrix);
     return modelMatrix;
-  }*/
+  }
   
   private void renderLight(GL3 gl, Shader shader, Mat4 modelMatrix, Mat4 view, Mat4 projection) {
     Mat4 mvpMatrix = Mat4.multiply(projection, Mat4.multiply(view, modelMatrix));
