@@ -14,8 +14,7 @@ public class M02_GLEventListener implements GLEventListener {
   private static final boolean DISPLAY_SHADERS = false;
   private Shader shaderCube, shaderLight;
   private Camera camera;
-    
-  /* The constructor is not used to initialise anything */
+
   public M02_GLEventListener(Camera camera) {
     this.camera = camera;
     this.camera.setPosition(new Vec3(-10,6,20));
@@ -97,7 +96,7 @@ public class M02_GLEventListener implements GLEventListener {
 
     light.render(gl);
     cubeModel.render(gl);
-}
+  }
   
   // **********************************
   /* Rendering the cube
@@ -115,7 +114,7 @@ public class M02_GLEventListener implements GLEventListener {
     Mat4 modelMatrix = Mat4Transform.scale(4,4,4);
     Shader shader = new Shader(gl, "assets/shaders/vs_standard.txt", 
                                  "assets/shaders/fs_standard_dse.txt");
-    Material material = MaterialConstants.gold; 
+    Material material = MaterialConstants.gold.clone(); 
     //new Material(ambient,diffuse, specular, shininess);
     material.setDiffuseMap(textures.get("diffuse_container"));
     material.setSpecularMap(textures.get("specular_container"));

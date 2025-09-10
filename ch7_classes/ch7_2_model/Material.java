@@ -8,10 +8,11 @@ import com.jogamp.opengl.util.texture.*;
  * @version   1.0 (15/10/2017)
  */
 
-public class Material {
+public class Material implements Cloneable {
   
   // Note: if assigned, these cannot be changed. For a changeable value need to create
   // a new Vec3 using one of these.
+  // Default is a fairly bright white colour with some specular.
   public static final Vec3 DEFAULT_AMBIENT = new Vec3(0.2f, 0.2f, 0.2f);
   public static final Vec3 DEFAULT_DIFFUSE = new Vec3(0.8f, 0.8f, 0.8f);
   public static final Vec3 DEFAULT_SPECULAR = new Vec3(0.5f, 0.5f, 0.5f);
@@ -299,6 +300,19 @@ public class Material {
 
   public Texture getEmissionMap() {
     return emissionMap;
+  }
+
+  public Material clone() {
+    Material cloned = new Material();
+    cloned.ambient = new Vec3(this.ambient);
+    cloned.diffuse = new Vec3(this.diffuse);
+    cloned.specular = new Vec3(this.specular);
+    cloned.emission = new Vec3(this.emission);
+    cloned.shininess = this.shininess;
+    cloned.diffuseMap = this.diffuseMap;
+    cloned.specularMap = this.specularMap;
+    cloned.emissionMap = this.emissionMap;
+    return cloned;
   }
 
   public String toString() {

@@ -15,7 +15,6 @@ public class M01_GLEventListener implements GLEventListener {
   private Shader shaderCube, shaderLight;
   private Camera camera;
     
-  /* The constructor is not used to initialise anything */
   public M01_GLEventListener(Camera camera) {
     this.camera = camera;
     this.camera.setPosition(new Vec3(-10,6,20));
@@ -75,21 +74,7 @@ public class M01_GLEventListener implements GLEventListener {
   private Vec3 lightPosition = new Vec3(4f,5f,8f);
   private Material lightMaterial;
 
-  // textures
-  private TextureLibrary textures;
-  private Texture diffuseMap;
-  private Texture specularMap;
-  private Texture emissionMap;
-
   public void initialise(GL3 gl) {
-
-    textures = new TextureLibrary();
-    textures.add(gl, "diffuse_container", "assets/textures/container2.jpg");
-    textures.add(gl, "specular_container", "assets/textures/container2_specular.jpg");
-    textures.add(gl, "chequerboard", "assets/textures/chequerboard.jpg");
-    textures.add(gl, "cloud", "assets/textures/cloud.jpg");
-    textures.add(gl, "emission", "assets/textures/matrix.jpg");
-
     cube = new Mesh(gl, Cube.vertices, Cube.indices);
     light = new Mesh(gl, Sphere.vertices, Sphere.indices);
 
@@ -115,8 +100,7 @@ public class M01_GLEventListener implements GLEventListener {
 
     renderLight(gl, shaderLight, getLightModelMatrix(), viewMatrix, projectionMatrix);
     renderCube(gl, shaderCube, getCubeModelMatrix(), viewMatrix, projectionMatrix);
-    
-}
+  }
   
   // ***************************************************
   /* TIME

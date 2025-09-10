@@ -85,10 +85,7 @@ public class Model {
     renderer.render(gl, mesh, modelMatrix, shader, material, light, camera);
   }
 
-  // second version of render is so that modelMatrix can be overridden with a new parameter
-
-  // This method assumes that the shader contains the variable names that are used in all the set methods.
-  
+  // second version of render is so that modelMatrix can be overridden with a new parameter  
   public void render(GL3 gl, Mat4 modelMatrix) {
     if (mesh_null()) {
       System.out.println("Error: null in model render");
