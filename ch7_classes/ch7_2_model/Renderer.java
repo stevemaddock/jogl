@@ -2,9 +2,6 @@ import gmaths.*;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.util.texture.*;
 
-// OVERLY COMPLICATED???
-// Just use a single method with if tests for each available field?
-
 public class Renderer {
 
   public Renderer() {}
@@ -31,10 +28,6 @@ public class Renderer {
     shader.setFloat(gl, "material.shininess", material.getShininess());
   }
 
-
-  // rename shader textures as diffuse_texture, specular_texture and emission_texture
-  // be careful to match these with GL_TEXTURE0 and GL_TEXTURE1 and GL_TEXTURE2
-
   private void doDiffuseMap(GL3 gl, Shader shader, Texture dm) {
     shader.setInt(gl, "diffuse_texture", 0);  
     gl.glActiveTexture(GL.GL_TEXTURE0);
@@ -54,7 +47,7 @@ public class Renderer {
   }
 
   public void render(GL3 gl, Mesh mesh, Mat4 modelMatrix,  Shader shader, 
-      Material material, Light light, Camera camera) {
+    Material material, Light light, Camera camera) {
     // set shader variables. Be careful that these variables exist in the shader
     shader.use(gl);
     doVertexShaderMatrices(gl, shader, modelMatrix, camera);
