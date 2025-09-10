@@ -71,9 +71,8 @@ public class Scene2_GLEventListener implements GLEventListener {
    */
 
   private Model cube;
-  private Model[] flatPlane;
+  private Model[] plane;
   private Light light;
-  private Mat4[] roomTransforms;
 
   // textures
   private TextureLibrary textures;
@@ -92,11 +91,11 @@ public class Scene2_GLEventListener implements GLEventListener {
 
     light = new Light(gl, camera);
 
-    flatPlane = new Model[3];
+    plane = new Model[3];
 
-    flatPlane[0] = makeFlatPlane(gl, getM1(), "assets/shaders/fs_standard_dse.txt", textures.get("chequerboard"), textures.get("white1x1"), textures.get("black1x1"));
-    flatPlane[1] = makeFlatPlane(gl, getM2(), "assets/shaders/fs_standard_e.txt", null, null, textures.get("matrix"));
-    flatPlane[2] = makeFlatPlane(gl, getM3(), "assets/shaders/fs_standard_d.txt", textures.get("cloud"), null, null);
+    plane[0] = makePlane(gl, getM1(), "assets/shaders/fs_standard_dse.txt", textures.get("chequerboard"), textures.get("white1x1"), textures.get("black1x1"));
+    plane[1] = makePlane(gl, getM2(), "assets/shaders/fs_standard_e.txt", null, null, textures.get("matrix"));
+    plane[2] = makePlane(gl, getM3(), "assets/shaders/fs_standard_d.txt", textures.get("cloud"), null, null);
   
     cube = makeCube(gl);
   }
@@ -110,15 +109,9 @@ public class Scene2_GLEventListener implements GLEventListener {
 
     cube.render(gl);
 
-    // reusing the same model, but changing the modelTransform 
-    // on each call
-    // Could create a separate class and store 
-    // model and transforms as part of that class
-    // and then draw the set of planes, e.g. a Room
-
-    flatPlane[0].render(gl);
-    flatPlane[1].render(gl);
-    flatPlane[2].render(gl);
+    plane[0].render(gl);
+    plane[1].render(gl);
+    plane[2].render(gl);
   }
   
 
@@ -126,7 +119,7 @@ public class Scene2_GLEventListener implements GLEventListener {
   /* Floor
    */
 
-  private Model makeFlatPlane(GL3 gl, Mat4 m, String fragmentPath, Texture diffuse, Texture specular, Texture emission) {
+  private Model makePlane(GL3 gl, Mat4 m, String fragmentPath, Texture diffuse, Texture specular, Texture emission) {
     String name = "floor";
     Mesh mesh = new Mesh(gl, TwoTriangles.vertices.clone(), TwoTriangles.indices.clone());
     Mat4 modelMatrix = m;
@@ -165,7 +158,7 @@ public class Scene2_GLEventListener implements GLEventListener {
   /* Light
    */
 
-    // The light's postion is continually being changed, so needs to be calculated for each frame.
+    // The light's position is continually being changed, so needs to be calculated for each frame.
   private Vec3 getLightPosition() {
     double elapsedTime = getSeconds()-startTime;
     float x = 5.0f*(float)(Math.sin(Math.toRadians(elapsedTime*50)));
