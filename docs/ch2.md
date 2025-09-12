@@ -2,7 +2,7 @@
 
 # Chapter 2. Rendering triangles
 
-You will need to install JOGL before you can do any practical work. Appendix A 'Installing JOGL' describes how to do this.
+You will need to install JOGL before you can do any practical work. [Appendix A: Installing JOGL](appendixA.md) describes how to do this.
 
 This chapter is composed of three main sections:
 

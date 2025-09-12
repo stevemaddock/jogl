@@ -1,4 +1,4 @@
-[back](../README.md)
+[main menu](../README.md)
 
 # Appendix A
 
@@ -175,4 +175,4 @@ You can list all the environment variables on a Mac by typing 'env' at the promp
 
 Important: On a Mac, when you run one of the programs in the later chapters, you may get some warnings or a message saying that a shader could not link. Do not worry about this. There appears to be a bug when initially checking that a shader program has linked correctly. It has linked correctly, as attested by the fact that the programs work as expected.
 
-[back](../README.md)
+[main menu](../README.md)
