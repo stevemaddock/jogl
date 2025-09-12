@@ -2,7 +2,7 @@
 
 # Chapter 1. Introduction
 
-Before you start, you need to install JOGL. See 'Appendix A: Installing JOGL' to do this.
+Before you start, you need to install JOGL. See [Appendix A: Installing JOGL](appendixA.md) to do this.
 
 This tutorial will focus on modern OpenGL using Java and JOGL. There are relatively few resources on this in comparison to the more plentiful resources on OpenGL and C++. However, all the OpenGL and C++ resources are useful to us, since they still explain the OpenGL aspects. Rather than explain many of those aspects in this tutorial, I will instead make use of an existing excellent tutorial: [Joey de Vries's Learn OpenGL tutorial](https://learnopengl.com/).
 
