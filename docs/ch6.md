@@ -15,7 +15,7 @@ Figure 6.1 summarises where we are at with regards the complexity of our program
 
 <p align="center">
   <img src="ch6_img/ch6_CPU_to_GPU.png" alt="CPU to GPU" width="500"><br>
-  <strong>Figure 6.1:</strong> Transferring data from CPU to GPU
+  <strong>Figure 6.1.</strong> Transferring data from CPU to GPU
 </p>
 
 This chapter is composed of four main sections:
