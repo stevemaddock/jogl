@@ -8,7 +8,7 @@ import com.jogamp.opengl.util.awt.*;
 import com.jogamp.opengl.util.glsl.*;
 import com.jogamp.opengl.util.texture.*;
   
-public class L05_GLEventListener implements GLEventListener {
+public class L06_GLEventListener implements GLEventListener {
   
   private static final boolean DISPLAY_SHADERS = false;
   private Shader shaderCube, shaderLight;
@@ -16,7 +16,7 @@ public class L05_GLEventListener implements GLEventListener {
   private int levels = 5;
     
   /* The constructor is not used to initialise anything */
-  public L05_GLEventListener(Camera camera) {
+  public L06_GLEventListener(Camera camera) {
     this.camera = camera;
     this.camera.setPosition(new Vec3(-10,6,20));
   }

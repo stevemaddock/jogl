@@ -119,7 +119,7 @@ public class L04_GLEventListener implements GLEventListener {
 
     renderLight(gl, lightShader, getLightModelMatrix(), viewMatrix, projectionMatrix);
     renderCube(gl, cubeShader, getCubeModelMatrix(), viewMatrix, projectionMatrix);
-}
+  }
   
   // ***************************************************
   /* TIME

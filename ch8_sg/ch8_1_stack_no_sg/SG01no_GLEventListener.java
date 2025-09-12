@@ -73,9 +73,8 @@ public class SG01no_GLEventListener implements GLEventListener {
 
   private Model cube;
   private Model sphere;
-  private Model flatPlane;
+  private Model plane;
   private Light light;
-  private Mat4[] roomTransforms;
 
   // textures
   private TextureLibrary textures;
@@ -99,7 +98,7 @@ public class SG01no_GLEventListener implements GLEventListener {
     m.setSpecular(0.7f, 0.7f, 0.7f);
     light.setMaterial(m);
 
-    flatPlane = makeFlatPlane(gl, getM1(), "assets/shaders/fs_standard_d.txt", textures.get("chequerboard"), null, null);
+    plane = makePlane(gl, getM1(), "assets/shaders/fs_standard_d.txt", textures.get("chequerboard"), null, null);
    
     Mat4 mCube = Mat4Transform.translate(0,0.5f,0);
     mCube = Mat4.multiply(Mat4Transform.scale(4,4,4), mCube);
@@ -122,7 +121,7 @@ public class SG01no_GLEventListener implements GLEventListener {
 
     light.render(gl);
 
-    flatPlane.render(gl);
+    plane.render(gl);
     
     cube.render(gl);
 
@@ -134,7 +133,7 @@ public class SG01no_GLEventListener implements GLEventListener {
   /* Floor
    */
 
-  private Model makeFlatPlane(GL3 gl, Mat4 m, String fragmentPath, Texture diffuse, Texture specular, Texture emission) {
+  private Model makePlane(GL3 gl, Mat4 m, String fragmentPath, Texture diffuse, Texture specular, Texture emission) {
     String name = "floor";
     Mesh mesh = new Mesh(gl, TwoTriangles.vertices.clone(), TwoTriangles.indices.clone());
     Mat4 modelMatrix = m;

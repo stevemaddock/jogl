@@ -75,7 +75,6 @@ public class SG02_GLEventListener implements GLEventListener {
   private Model sphere;
   private Model floor;
   private Light light;
-  private Mat4[] roomTransforms;
 
   // textures
   private TextureLibrary textures;
@@ -155,11 +154,8 @@ public class SG02_GLEventListener implements GLEventListener {
 
   public void render(GL3 gl) {
     gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
-
     light.setPosition(getLightPosition()); // changing light position each frame
-
     light.render(gl);
-
     floor.render(gl);
     
     stackRoot.draw(gl);  // called draw rather than render to avoid confusion with model rendering

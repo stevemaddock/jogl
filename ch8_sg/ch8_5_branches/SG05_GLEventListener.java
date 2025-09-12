@@ -83,9 +83,6 @@ public class SG05_GLEventListener implements GLEventListener {
   private float xPosition = 0;
   private float rotateAllAngleStart = 25, rotateAllAngle = rotateAllAngleStart;
   private float rotateUpperAngleStart = -60, rotateUpperAngle = rotateUpperAngleStart;
-  
-
-  private SGNode stackRoot;
 
   public void initialise(GL3 gl) {
     createRandomNumbers();
@@ -161,11 +158,8 @@ public class SG05_GLEventListener implements GLEventListener {
 
   public void render(GL3 gl) {
     gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
-
     light.setPosition(getLightPosition()); // changing light position each frame
-
     light.render(gl);
-
     floor.render(gl);
     
   // 5. animation. Comment out the following line for 1-4.

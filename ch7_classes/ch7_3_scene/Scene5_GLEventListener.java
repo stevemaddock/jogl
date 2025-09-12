@@ -72,9 +72,8 @@ public class Scene5_GLEventListener implements GLEventListener {
    */
 
   private Model[] cube;
-  private Model[] flatPlane;
+  private Model[] plane;
   private Light light;
-  private Mat4[] roomTransforms;
 
   // textures
   private TextureLibrary textures;
@@ -98,10 +97,10 @@ public class Scene5_GLEventListener implements GLEventListener {
     m.setSpecular(0.7f, 0.7f, 0.7f);
     light.setMaterial(m);
 
-    flatPlane = new Model[3];
-    flatPlane[0] = makeFlatPlane(gl, getM1(), "assets/shaders/fs_standard_d.txt", textures.get("chequerboard"), null, null);
-    flatPlane[1] = makeFlatPlane(gl, getM2(), "assets/shaders/fs_standard_d.txt", textures.get("cloud"), null, null);
-    flatPlane[2] = makeFlatPlane(gl, getM3(), "assets/shaders/fs_standard_0t.txt", null, null, null);
+    plane = new Model[3];
+    plane[0] = makePlane(gl, getM1(), "assets/shaders/fs_standard_d.txt", textures.get("chequerboard"), null, null);
+    plane[1] = makePlane(gl, getM2(), "assets/shaders/fs_standard_d.txt", textures.get("cloud"), null, null);
+    plane[2] = makePlane(gl, getM3(), "assets/shaders/fs_standard_0t.txt", null, null, null);
   
     cube = new Model[3];
     cube[0] = makeCube(gl, Mat4.multiply(Mat4Transform.translate(0,4,0), Mat4Transform.scale(4,4,4)),
@@ -119,9 +118,9 @@ public class Scene5_GLEventListener implements GLEventListener {
 
     light.render(gl);
 
-    flatPlane[0].render(gl);
-    flatPlane[1].render(gl);
-    flatPlane[2].render(gl);
+    plane[0].render(gl);
+    plane[1].render(gl);
+    plane[2].render(gl);
     
     cube[0].render(gl);
     cube[1].render(gl);
@@ -135,7 +134,7 @@ public class Scene5_GLEventListener implements GLEventListener {
   /* Floor
    */
 
-  private Model makeFlatPlane(GL3 gl, Mat4 m, String fragmentPath, Texture diffuse, Texture specular, Texture emission) {
+  private Model makePlane(GL3 gl, Mat4 m, String fragmentPath, Texture diffuse, Texture specular, Texture emission) {
     String name = "floor";
     Mesh mesh = new Mesh(gl, TwoTriangles.vertices.clone(), TwoTriangles.indices.clone());
     Mat4 modelMatrix = m;

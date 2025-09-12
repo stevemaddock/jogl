@@ -1,6 +1,6 @@
 import gmaths.*;
 
-public class TestVec2 {
+public class TestM1 {
     
   public static void main(String[] args) {
     Vec2 v1 = new Vec2();

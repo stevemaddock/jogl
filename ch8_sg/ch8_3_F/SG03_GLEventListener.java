@@ -196,9 +196,7 @@ public class SG03_GLEventListener implements GLEventListener {
     gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
 
     light.setPosition(getLightPosition()); // changing light position each frame
-
     light.render(gl);
-
     floor.render(gl);
     sphere.render(gl);
     

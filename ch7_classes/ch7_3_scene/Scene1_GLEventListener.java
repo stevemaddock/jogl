@@ -70,9 +70,8 @@ public class Scene1_GLEventListener implements GLEventListener {
    * This will be added to in later examples.
    */
 
-  private Model cube, flatPlane;
+  private Model cube, plane;
   private Light light;
-  private Mat4[] roomTransforms;
 
   // textures
   private TextureLibrary textures;
@@ -89,32 +88,29 @@ public class Scene1_GLEventListener implements GLEventListener {
 
     light = new Light(gl, camera);
 
-    flatPlane = makeFlatPlane(gl);
-    cube = makeCube(gl);     
-    roomTransforms = setupRoomTransforms();               
+    plane = makePlane(gl); 
+    cube = makeCube(gl);             
   }
   
   public void render(GL3 gl) {
     gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
-
     light.setPosition(getLightPosition()); // changing light position each frame
-
     light.render(gl);
 
     cube.render(gl);
 
     // reusing the same model, but changing the modelTransform 
     // on each call
-    // Could create a seprate class and store 
+    // Could create a separate class and store 
     // model and transforms as part of that class
     // and then draw the set of planes, e.g. a Room
 
-    flatPlane.setModelMatrix(roomTransforms[0]);       // change transform
-    flatPlane.render(gl);
-    flatPlane.setModelMatrix(roomTransforms[1]);       // change transform
-    flatPlane.render(gl);
-    flatPlane.setModelMatrix(roomTransforms[2]);       // change transform
-    flatPlane.render(gl);
+    plane.setModelMatrix(getM1());       // get transform (inefficient to do this each frame)
+    plane.render(gl);
+    plane.setModelMatrix(getM2());       // get transform (inefficient to do this each frame)
+    plane.render(gl);
+    plane.setModelMatrix(getM3());       // get transform (inefficient to do this each frame)
+    plane.render(gl);
   }
   
 
@@ -122,7 +118,7 @@ public class Scene1_GLEventListener implements GLEventListener {
   /* Floor
    */
 
-  private Model makeFlatPlane(GL3 gl) {
+  private Model makePlane(GL3 gl) {
     String name = "floor";
     Mesh mesh = new Mesh(gl, TwoTriangles.vertices.clone(), TwoTriangles.indices.clone());
     Mat4 modelMatrix = new Mat4(1);
@@ -159,7 +155,7 @@ public class Scene1_GLEventListener implements GLEventListener {
   /* Light
    */
 
-    // The light's postion is continually being changed, so needs to be calculated for each frame.
+    // The light's position is continually being changed, so needs to be calculated for each frame.
   private Vec3 getLightPosition() {
     double elapsedTime = getSeconds()-startTime;
     float x = 5.0f*(float)(Math.sin(Math.toRadians(elapsedTime*50)));
@@ -170,22 +166,15 @@ public class Scene1_GLEventListener implements GLEventListener {
 
 // ***************************************************
 
-private Mat4[] setupRoomTransforms() {
-    Mat4[] t = new Mat4[4];
-    t[0] = getMforTT1();
-    t[1] = getMforTT2();
-    t[2] = getMforTT3();
-    return t;
-  }
-  
-  private Mat4 getMforTT1() {
+
+  private Mat4 getM1() {
     float size = 16f;
     Mat4 modelMatrix = new Mat4(1);
     modelMatrix = Mat4.multiply(Mat4Transform.scale(size,1f,size), modelMatrix);
     return modelMatrix;
   }
   
-  private Mat4 getMforTT2() {
+  private Mat4 getM2() {
     float size = 16f;
     Mat4 modelMatrix = new Mat4(1);
     modelMatrix = Mat4.multiply(Mat4Transform.scale(size,1f,size), modelMatrix);
@@ -194,7 +183,7 @@ private Mat4[] setupRoomTransforms() {
     return modelMatrix;
   }
 
-  private Mat4 getMforTT3() {
+  private Mat4 getM3() {
     float size = 16f;
     Mat4 modelMatrix = new Mat4(1);
     modelMatrix = Mat4.multiply(Mat4Transform.scale(size,1f,size), modelMatrix);

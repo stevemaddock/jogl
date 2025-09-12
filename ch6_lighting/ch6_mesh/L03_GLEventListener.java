@@ -174,7 +174,7 @@ public class L03_GLEventListener implements GLEventListener {
     shader.setFloatArray(gl, "mvpMatrix", mvpMatrix.toFloatArrayForGLSL());
 
     // use diffuse value of light Material as colour appearance of light
-    shader.setVec3(gl, "light", lightDiffuse);
+    shader.setVec3(gl, "lightColor", lightDiffuse);
 
     light.render(gl);
   }

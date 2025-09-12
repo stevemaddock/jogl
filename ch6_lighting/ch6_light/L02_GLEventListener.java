@@ -55,13 +55,13 @@ public class L02_GLEventListener implements GLEventListener {
 
   /* Clean up memory, if necessary */
   public void dispose(GLAutoDrawable drawable) {
-    GL3 gl = drawable.getGL().getGL3();
-    gl.glDeleteBuffers(1, vertexBufferId, 0);
-    gl.glDeleteVertexArrays(1, vertexArrayId, 0);
-    gl.glDeleteBuffers(1, elementBufferId, 0);
-    gl.glDeleteBuffers(1, light_vertexBufferId, 0);
-    gl.glDeleteVertexArrays(1, light_vertexArrayId, 0);
-    gl.glDeleteBuffers(1, light_elementBufferId, 0);
+    // GL3 gl = drawable.getGL().getGL3();
+    // gl.glDeleteBuffers(1, vertexBufferId, 0);
+    // gl.glDeleteVertexArrays(1, vertexArrayId, 0);
+    // gl.glDeleteBuffers(1, elementBufferId, 0);
+    // gl.glDeleteBuffers(1, light_vertexBufferId, 0);
+    // gl.glDeleteVertexArrays(1, light_vertexArrayId, 0);
+    // gl.glDeleteBuffers(1, light_elementBufferId, 0);
   }
 
   // ***************************************************
@@ -147,9 +147,9 @@ public class L02_GLEventListener implements GLEventListener {
   // Alternative version for moving light
    private Mat4 getMovingLightModelMatrix() {
     double elapsedTime = getSeconds()-startTime;
-    lightPosition.x = 5.0f*(float)(Math.sin(Math.toRadians(elapsedTime*50)));
-    lightPosition.y = 3.0f;
-    lightPosition.z = 5.0f*(float)(Math.cos(Math.toRadians(elapsedTime*50)));
+    lightPosition.x = 7.0f*(float)(Math.sin(Math.toRadians(elapsedTime*50)));
+    lightPosition.y = 4.0f;
+    lightPosition.z = 7.0f*(float)(Math.cos(Math.toRadians(elapsedTime*50)));
     Mat4 modelMatrix = new Mat4(1);
     modelMatrix = Mat4.multiply(Mat4Transform.scale(0.3f,0.3f,0.3f), modelMatrix);
     modelMatrix = Mat4.multiply(Mat4Transform.translate(lightPosition), modelMatrix);

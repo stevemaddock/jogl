@@ -114,13 +114,10 @@ public class SG04_GLEventListener implements GLEventListener {
 
   public void render(GL3 gl) {
     gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
-
     light.setPosition(getLightPosition()); // changing light position each frame
     light.render(gl);
-
     floor.render(gl);
     sphere.render(gl);
-
     cuboids.render(gl);
     fObj.render(gl);
   }
@@ -361,7 +358,7 @@ class Cuboids {
           translateToTop.addChild(upperCuboid);
             upperCuboid.addChild(upperCubeTransform);
               upperCubeTransform.addChild(upperCubeShape);
-      cuboidsRoot.update(); 
+    cuboidsRoot.update(); 
   }
 
   public void render(GL3 gl) {

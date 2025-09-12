@@ -55,13 +55,13 @@ public class L01_GLEventListener implements GLEventListener {
 
   /* Clean up memory, if necessary */
   public void dispose(GLAutoDrawable drawable) {
-    GL3 gl = drawable.getGL().getGL3();
-    gl.glDeleteBuffers(1, vertexBufferId, 0);
-    gl.glDeleteVertexArrays(1, vertexArrayId, 0);
-    gl.glDeleteBuffers(1, elementBufferId, 0);
-    gl.glDeleteBuffers(1, light_vertexBufferId, 0);
-    gl.glDeleteVertexArrays(1, light_vertexArrayId, 0);
-    gl.glDeleteBuffers(1, light_elementBufferId, 0);
+    // GL3 gl = drawable.getGL().getGL3();
+    // gl.glDeleteBuffers(1, vertexBufferId, 0);
+    // gl.glDeleteVertexArrays(1, vertexArrayId, 0);
+    // gl.glDeleteBuffers(1, elementBufferId, 0);
+    // gl.glDeleteBuffers(1, light_vertexBufferId, 0);
+    // gl.glDeleteVertexArrays(1, light_vertexArrayId, 0);
+    // gl.glDeleteBuffers(1, light_elementBufferId, 0);
   }
 
   // ***************************************************
@@ -149,7 +149,7 @@ public class L01_GLEventListener implements GLEventListener {
    */
    
   private int lightIndex = 0;
-  private Vec3[] lightPosition = {new Vec3(4f,5f,8f), new Vec3(-10f,5f,0f), new Vec3(4f,5f,-8f)};
+  private Vec3[] lightPosition = {new Vec3(4f,5f,8f), new Vec3(-8f,5f,5f), new Vec3(4f,5f,-8f)};
 
   private Mat4 getLightModelMatrix() {
     Mat4 modelMatrix = new Mat4(1);

@@ -18,7 +18,6 @@ public class SG07 extends JFrame implements ActionListener {
   private GLCanvas canvas;
   private SG07_GLEventListener glEventListener;
   private final FPSAnimator animator; 
-
   public static void main(String[] args) {
     SG07 b1 = new SG07("SG07");
     b1.getContentPane().setPreferredSize(dimension);
