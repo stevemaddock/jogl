@@ -32,10 +32,4 @@ Section 2.2 focuses on how to draw a single 2D triangle on the drawing surface c
 
 Section 2.3 introduces Element Buffer Objects, which make it easier to manipulate and render multiple triangles. Figure 2.2 shows two triangles used to make a rectangle. The program in Section 2.3 could easily be adapted to draw many triangles. In later chapters, we will build on this idea to render complex 3D scenes.
 
-# notes (leave for now)
-
-- A01.java - open an empty window
-- A02.java - draw a 2D triangle using vertex list <img src="ch2_img/A02_output.png" alt="output from A02" width="100">
-- A03.java - draw two 2D triangles using indices to the vertex list <img src="ch2_img/A03_output.png" alt="output from A03" width="100">
-
 [main menu](../README.md)

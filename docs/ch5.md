@@ -2,7 +2,7 @@
 
 # Chapter 5. Transformations, Coordinate systems and a camera
 
-Read through Joey de Vries's tutorial sections on Transformations, Coordinate Systems and Camera before continuing. I will assume you have read these when describing the changes for JOGL.
+Read through Joey de Vries's tutorial sections on [Transformations](https://learnopengl.com/Getting-started/Transformations), [Coordinate Systems](https://learnopengl.com/Getting-started/Coordinate-Systems) and [Camera](https://learnopengl.com/Getting-started/Camera) before continuing. I will assume you have read these when describing the changes for JOGL.
 
 This chapter is composed of four main sections:
 

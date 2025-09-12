@@ -25,15 +25,4 @@ Figure 4.0 shows the output of the 5 programs used in Section 4.1 to 4.3.
   <strong>Figure 4.0.</strong> Output from programs T01, T02, T03, T04, T05.
 </p>
 
-
-
----
-
-## MCQs (written by Google Gemini)
-
----
-
-## Exercises
-
-
 [main menu](../README.md)
