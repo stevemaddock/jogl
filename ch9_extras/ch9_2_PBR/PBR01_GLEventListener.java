@@ -179,7 +179,6 @@ public class PBR01_GLEventListener implements GLEventListener {
 
     sphere[0].renderPBR(gl);
     sphere[1].renderPBR(gl);
-
   }
 
   // **********************************

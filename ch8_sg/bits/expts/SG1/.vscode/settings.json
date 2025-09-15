@@ -1,0 +1,12 @@
+{
+  "java.project.sourcePaths": [
+    "."
+  ],
+  "java.project.referencedLibraries": [
+    "jogl25\\jar\\jogl-all.jar",
+    "jogl25\\jar\\gluegen-rt.jar"
+  ],
+  "cSpell.words": [
+    "colour"
+  ]
+}

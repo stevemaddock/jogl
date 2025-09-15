@@ -1,0 +1,12 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "c:\\jogl25\\jar\\gluegen-rt.jar",
+    "c:\\jogl25\\jar\\jogl-all.jar"
+  ],
+  "cSpell.words": [
+    "chequerboard",
+    "Initialisation",
+    "initialise"
+  ]
+}

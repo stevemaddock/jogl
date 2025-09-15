@@ -73,7 +73,6 @@ public class ML01_GLEventListener implements GLEventListener {
 
   private Model[] cube;
   private Light[] lights;
-  private Mat4[] roomTransforms;
 
   // textures
   private TextureLibrary textures;
@@ -103,11 +102,20 @@ public class ML01_GLEventListener implements GLEventListener {
 
     cube = new Model[3];
     cube[0] = makeCube(gl, Mat4.multiply(Mat4Transform.translate(0,4,0), Mat4Transform.scale(4,4,4)),
-                       "assets/shaders/fs_standard_dse_ml.txt", textures.get("diffuse_container"), textures.get("specular_container"), textures.get("matrix"));
+                       "assets/shaders/fs_standard_dse_ml.txt", 
+                       textures.get("diffuse_container"), 
+                       textures.get("specular_container"), 
+                       textures.get("matrix"));
     cube[1] = makeCube(gl, Mat4.multiply(Mat4Transform.translate(0,4,0), Mat4Transform.scale(2,6,2)),
-                       "assets/shaders/fs_standard_dse_ml.txt", textures.get("diffuse_container"), textures.get("specular_container"), textures.get("matrix"));
+                       "assets/shaders/fs_standard_dse_ml.txt", 
+                       textures.get("diffuse_container"), 
+                       textures.get("specular_container"), 
+                       textures.get("matrix"));
     cube[2] = makeCube(gl, Mat4.multiply(Mat4Transform.translate(0,4,0), Mat4Transform.scale(6,2,6)),
-                       "assets/shaders/fs_standard_dse_ml.txt", textures.get("diffuse_container"), textures.get("specular_container"), textures.get("matrix"));
+                       "assets/shaders/fs_standard_dse_ml.txt", 
+                       textures.get("diffuse_container"), 
+                       textures.get("specular_container"), 
+                       textures.get("matrix"));
   }
 
   public void render(GL3 gl) {
@@ -124,7 +132,6 @@ public class ML01_GLEventListener implements GLEventListener {
     cube[0].render(gl);
     cube[1].render(gl);
     cube[2].render(gl);
-
   }
   
 
