@@ -14,7 +14,7 @@ Screenshots of programs will be used in each chapter to show what you should see
 
 I do not advocate a specific editor to develop your programs. I have used Visual Studio Code when developing all the source code for the tutorial. When you hand in the assessed work for the module it must be possible to compile and run your program from the command line in a command window rather than have to rely on a specific IDE (which I may not have installed).
 
-[!TIP]
-Clicking on any of the links in a github markdown file will open the new file in place of the existing one. Thus, if you want the link to open in a new tab, then use ctrl+click (on Windows) or CMD+click (on MacOS) to open the link.
+> [!TIP]
+> Clicking on any of the links in a github markdown file will open the new file in place of the existing one. Thus, if you want the link to open in a new tab, then use ctrl+click (on Windows) or CMD+click (on MacOS) to open the link.
 
 [main menu](../README.md)
