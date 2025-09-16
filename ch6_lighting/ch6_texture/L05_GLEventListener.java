@@ -136,7 +136,7 @@ public class L05_GLEventListener implements GLEventListener {
     renderLight(gl, lightShader, getLightModelMatrix(), viewMatrix, projectionMatrix);
     renderCube(gl, cubeShader, getCubeModelMatrix(), viewMatrix, projectionMatrix);
     renderSphere(gl, sphereShader, getSphereModelMatrix(), viewMatrix, projectionMatrix);
-}
+  }
   
   // ***************************************************
   /* TIME

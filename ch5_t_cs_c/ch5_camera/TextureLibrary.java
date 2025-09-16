@@ -25,26 +25,26 @@ public class TextureLibrary {
     return textures.get(name);
   }
 
-  // no mip-mapping (see next example)
-  public Texture loadTexture(GL3 gl3, String filename) {
-    Texture t = null; 
-    try {
-      File f = new File(filename);
-      t = (Texture)TextureIO.newTexture(f, true);
-	    t.bind(gl3);
-      t.setTexParameteri(gl3, GL3.GL_TEXTURE_MIN_FILTER, GL3.GL_LINEAR);
-      t.setTexParameteri(gl3, GL3.GL_TEXTURE_MAG_FILTER, GL3.GL_LINEAR);
-      t.setTexParameteri(gl3, GL3.GL_TEXTURE_WRAP_S, GL3.GL_CLAMP_TO_EDGE);
-      t.setTexParameteri(gl3, GL3.GL_TEXTURE_WRAP_T, GL3.GL_CLAMP_TO_EDGE); 
-    }
-    catch(Exception e) {
-      System.out.println("Error loading texture " + filename); 
-    }
-    return t;
-  }
+  // no mip-mapping (see below for mip-mapping)
+  // public Texture loadTexture(GL3 gl3, String filename) {
+  //   Texture t = null; 
+  //   try {
+  //     File f = new File(filename);
+  //     t = (Texture)TextureIO.newTexture(f, true);
+	//     t.bind(gl3);
+  //     t.setTexParameteri(gl3, GL3.GL_TEXTURE_MIN_FILTER, GL3.GL_LINEAR);
+  //     t.setTexParameteri(gl3, GL3.GL_TEXTURE_MAG_FILTER, GL3.GL_LINEAR);
+  //     t.setTexParameteri(gl3, GL3.GL_TEXTURE_WRAP_S, GL3.GL_CLAMP_TO_EDGE);
+  //     t.setTexParameteri(gl3, GL3.GL_TEXTURE_WRAP_T, GL3.GL_CLAMP_TO_EDGE); 
+  //   }
+  //   catch(Exception e) {
+  //     System.out.println("Error loading texture " + filename); 
+  //   }
+  //   return t;
+  // }
 
   // mip-mapping is included in the below example
-  /*public static Texture loadTexture(GL3 gl3, String filename) {
+  public static Texture loadTexture(GL3 gl3, String filename) {
     Texture t = null; 
     try {
       File f = new File(filename);
@@ -61,7 +61,6 @@ public class TextureLibrary {
     }
     return t;
   }
-*/
 
   public void destroy(GL3 gl3) {
     for (var entry : textures.entrySet()) {
