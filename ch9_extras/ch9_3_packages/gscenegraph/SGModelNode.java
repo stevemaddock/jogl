@@ -1,6 +1,7 @@
 package gscenegraph;
 
 import gcommon.Model;
+
 import com.jogamp.opengl.*;
 
 public class SGModelNode extends SGNode {

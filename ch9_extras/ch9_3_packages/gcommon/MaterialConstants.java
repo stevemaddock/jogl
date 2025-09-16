@@ -1,6 +1,7 @@
 package gcommon;
 
 import gmaths.*;
+
 import com.jogamp.opengl.util.texture.*;
 
  /**

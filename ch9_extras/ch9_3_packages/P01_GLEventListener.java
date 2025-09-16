@@ -1,8 +1,7 @@
+import gmaths.*;
 import gcommon.*;
 import gmesh.*;
 import gscenegraph.*;
-
-import gmaths.*;
 
 import java.nio.*;
 import com.jogamp.common.nio.*;

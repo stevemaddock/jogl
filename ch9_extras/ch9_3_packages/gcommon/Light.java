@@ -1,8 +1,8 @@
 package gcommon;
 
+import gmaths.*;
 import gmesh.*;
 
-import gmaths.*;
 import java.nio.*;
 import com.jogamp.common.nio.*;
 import com.jogamp.opengl.*;

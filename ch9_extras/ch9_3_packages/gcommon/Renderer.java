@@ -1,8 +1,8 @@
 package gcommon;
 
+import gmaths.*;
 import gmesh.*;
 
-import gmaths.*;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.util.texture.*;
 
