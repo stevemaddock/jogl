@@ -2,6 +2,87 @@
 
 # Appendix A
 
+# NEW (for 25/26)
+
+## Setting up
+
+1. Download the correct version of JOGL - this is the same for PC and Mac users. I haven't been able to test for Linux users, but would welcome feedback from anyone who is a Linux user.
+2. Install the correct parts of the downloaded file - the aim here is to put the jar files in folders such that when you compile and run files they can be correctly linked.
+3. Compile and run the first test program.
+
+I'll go through each of these stages in more detail, first for Windows PC users, then for Mac users. 
+
+## Windows PC users
+
+### Step 1: Download JOGL
+
+- Visit the jogamp site: (https://jogamp.org/jogl/www/)
+- Follow the link for 'Builds/'
+- Find the heading 'Builds/Downloads'
+- Click on the link for 2.5.0 'zip' which takes you to a list of .7z files to download
+- Download 'jogamp-all-platforms.7z' ([Direct link](https://jogamp.org/deployment/jogamp-current/archive/))
+
+### Step 2: Installation
+
+The aim here is to place relevant files in a location on your PC where they can be linked to from the Java programs you will develop. I'm choosing to put them at c:\jogl25 to give a short path that indicates which version of jogl is being used. You can put them where you like on your system, but you will then need to adjust the instructions given below.
+
+Steps:
+
+- Create the folder 'c:\jogl25'
+- Unzip the downloaded file 'jogamp-all-platforms.7z', which will create a subfolder called 'jogamp-all-platforms'
+- Copy the subfolder 'jogamp-all-platforms\jar' into 'c:\jogl25' to create 'c:\jogl25\jar' (Note: some of the files are not needed, but it is simpler to just copy everything.)
+
+### Step 3: Running programs
+
+> [!TIP]
+> You can check which version of Java you are using, by typing 'javac -version' and 'java -version' at the Windows command window prompt.
+
+Decide where you will develop your Java and JOGL programs, e.g. c:\com3503 or c:\com4503 or c:\com6503 or c:\modules\com3503 or however you have organised files for the different modules you take. 
+
+Open a command prompt window in your working folder. Now that you have opened a command line window, you are ready to run programs. As an example, from Chapter 2 of the downloaded code:
+
+`C:\com3503>javac -cp c:/jogl25/jar/jogl-all.jar;c:/jogl25/jar/gluegen-rt.jar;. A01.java`
+
+`C:\com3503>java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl25/jar/jogl-all.jar;c:/jogl25/jar/gluegen-rt.jar;. A01`
+
+This is a lot to type every time you run a program. Instead, you can create a batch file or use a system like Visual Studio Code. 
+
+** Batch file **
+
+Create a text file called jc.bat which contains the following (on two lines):
+
+```
+del *.class
+javac -cp c:/jogl25/jar/jogl-all.jar;c:/jogl25/jar/gluegen-rt.jar;. %*
+```
+
+and a second text file called j.bat that contains the following (all on one line):
+
+```
+java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl25/jar/jogl-all.jar;c:/jogl25/jar/gluegen-rt.jar;. %*
+```
+
+Compilation can then be achieved using:
+
+`jc A01.java`
+
+and the program can be run using
+
+`j A01`
+
+
+
+
+---
+
+---
+
+---
+
+# OLD
+
+The instructions below have been superceded. They are included here as they have been tried and tested in recent years and do work. However, the instructions given above are much more flexible and mean that recent versions of java can be used.
+
 ## Java version
 
 I have used Java 11 to test the following. I cannot guarantee other versions of Java will work.
