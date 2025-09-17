@@ -14,38 +14,40 @@ I'll go through each of these stages in more detail, first for Windows PC users,
 
 ## Windows PC users
 
+## IMPORTANT
+
+replace the download and the jar files with with jogamp-fat.jar
+
+
 ### Step 1: Download JOGL
 
-- Visit the jogamp site: (https://jogamp.org/jogl/www/)
-- Follow the link for 'Builds/'
+- Visit the jogamp site: (https://jogamp.org/)
 - Find the heading 'Builds/Downloads'
-- Click on the link for 2.5.0 'zip' which takes you to a list of .7z files to download
-- Download 'jogamp-all-platforms.7z' ([Direct link](https://jogamp.org/deployment/jogamp-current/archive/))
+- Click on the link for 2.6.0 'fat' which takes you to a list of jar and zip files to download
+- Download 'jogamp-fat.jar' ([Direct link](https://jogamp.org/deployment/jogamp-current/fat/))
 
 ### Step 2: Installation
 
-The aim here is to place relevant files in a location on your PC where they can be linked to from the Java programs you will develop. I'm choosing to put them at c:\jogl25 to give a short path that indicates which version of jogl is being used. You can put them where you like on your system, but you will then need to adjust the instructions given below.
+The aim here is to place the 'jogamp-fat.jar' file in a location on your PC where it can be linked to from the Java programs you will develop. I'm choosing to put it at c:\jogl26 to give a short path that indicates which version of jogl is being used. You can put it where you like on your system, but you will then need to adjust the instructions given below.
 
-Steps:
-
-- Create the folder 'c:\jogl25'
-- Unzip the downloaded file 'jogamp-all-platforms.7z', which will create a subfolder called 'jogamp-all-platforms'
-- Copy the subfolder 'jogamp-all-platforms\jar' into 'c:\jogl25' to create 'c:\jogl25\jar' (Note: some of the files are not needed, but it is simpler to just copy everything.)
+The jogamp-fat.jar wraps everything that is needed in one file, rather than dealing with lots of different files.
 
 ### Step 3: Running programs
 
-> [!TIP]
-> You can check which version of Java you are using, by typing 'javac -version' and 'java -version' at the Windows command window prompt.
-
 Decide where you will develop your Java and JOGL programs, e.g. c:\com3503 or c:\com4503 or c:\com6503 or c:\modules\com3503 or however you have organised files for the different modules you take. 
 
-Open a command prompt window in your working folder (e.g. type 'cmd' in the folder line at the top of the file viewer or in the windows search box. Note this is **not** a Windows PowerShell.). Now that you have opened a command line window, you are ready to run programs. As an example, from Chapter 2 of the downloaded code:
+Open a command prompt window in your working folder (e.g. type 'cmd' in the folder line at the top of the file viewer or in the windows search box. Note this is **not** a Windows PowerShell.). Now that you have opened a command line window, you are ready to compile and run programs with javac and java, respectively. As an example, from Chapter 2 of the downloaded code:
 
-`C:\com3503>javac -cp c:/jogl25/jar/jogl-all.jar;c:/jogl25/jar/gluegen-rt.jar;. A01.java`
+`C:\com3503>javac -cp c:/jogl26/jogamp-fat.jar;. A01.java`
 
-`C:\com3503>java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl25/jar/jogl-all.jar;c:/jogl25/jar/gluegen-rt.jar;. A01`
+`C:\com3503>java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl26/jogamp-fat.jar;. A01`
+
+The --add-exports settings mean we can use JOGL with more recent versions of Java (which have increased policing with regards access of classes within a jar file so need to be told to ignore these extra measures). The -cp argument is short for classpath and tells the java compiler and runtime where to find relevant classes that are required for the program. Most of these are wrapped in the jogamp-fat.jar file. The '.' is important as it says that there are classes in the current folder - this is needed so that javac and java know to look in the current folder for the programs you have just compiled.
 
 This is a lot to type every time you run a program. Instead, you can create a batch file or use a system like Visual Studio Code. 
+
+> [!TIP]
+> You can check which version of Java you are using, by typing 'javac -version' and 'java -version' at the Windows command window prompt.
 
 **Batch file**
 
@@ -53,13 +55,13 @@ Create a text file called jc.bat which contains the following (on two lines):
 
 ```
 del *.class
-javac -cp c:/jogl25/jar/jogl-all.jar;c:/jogl25/jar/gluegen-rt.jar;. %*
+javac -cp c:/jogl26/jogamp-fat.jar;. %*
 ```
 
 and a second text file called j.bat that contains the following (all on one line):
 
 ```
-java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl25/jar/jogl-all.jar;c:/jogl25/jar/gluegen-rt.jar;. %*
+java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl26/jogamp-fat.jar;. %*
 ```
 
 Compilation can then be achieved using:
@@ -82,7 +84,7 @@ Click on one of the main program files, e.g. A01.java. This will create a Java P
 
 Click on the three horizontal dots next to `JAVA PROJECTS` and select Configure Classpath. Select the Libraries option. Click on '+ Add Library...'. 
 
-Navigate to wherever you put the jar files for JOGL (e.g. in C:\jog25\jar). Select gluegen-rt.jar, gluegen-rt-natives-windows-amd64.jar, jogl-all.jar, jogl-all-natives-windows-amd64.jar.
+Navigate to wherever you put the jar files for JOGL (e.g. in C:\jog26). Select jogamp-fat.jar.
 
 Then click on 'Apply Settings'.
 
@@ -113,7 +115,7 @@ becomes
 },
 ```
 
-The configuration for each of A01, A02 and A03 should be updated in the same way. Then save the launch.json file.
+The configuration for each of A01, A02 and A03 should be updated in the same way. Then save the launch.json file. (Note: your projectName will be different - it is automatically set up by Visual Studio Code.)
 
 Returning to the JAVA PROJECTS window, you can now click on the symbol of a bug over a triangle which is next to 'ch2_initial' when you hover over it with your mouse. Clicking this will run the program. The pop-up gives you the option of running A01, A02 or A03. If there was only one main program in the folder, it would run automatically.
 
