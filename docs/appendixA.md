@@ -58,21 +58,18 @@ del *.class
 javac -cp c:/jogl26/jogamp-fat.jar;. %*
 ```
 
-and a second text file called j.bat that contains the following (all on one line):
+This can be used to compile your java programs, e.g. `jc A01.java`. The %* means multiple parameters can be supplied to the batch file. As we are only using one, the %1 could be used instead.
+
+
+Create a second text file called j.bat that contains the following (all on one line):
 
 ```
 java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl26/jogamp-fat.jar;. %*
 ```
 
-Compilation can then be achieved using:
+The program can  then be run using `j A01`. Again, %* could be replaced by %1.
 
-`jc A01.java`
-
-and the program can be run using
-
-`j A01`
-
-There will be a few extra complications in later chapters with regards jar files, but this will suffice for now.
+In later chapters with more jar files may be needed, e.g. we will create a gmaths package in chapter 5 and this can then be wrapped into a jar file which can then be added to the list of jar files in the above commands. e.g. name.jar;name2.jar;name3.jar.
 
 **Visual Studio Code**
 
