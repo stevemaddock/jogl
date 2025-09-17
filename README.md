@@ -21,3 +21,11 @@ Java is used because the majority of students on the module will already have ex
 - [Chapter 9. Refinements / Extras](docs/ch9.md)
 - [Chapter 10. Summary](docs/ch10.md)
 - [Appendix A. Installing JOGL](docs/appendixA.md)
+
+## Acknowledgements
+
+Parts of this guide, particularly the early chapters, draw inspiration from Joey de Vries' excellent [learnopengl tutorial](https://learnopengl.com). His personal X handle is [https://x.com/JoeyDeVriez](https://x.com/JoeyDeVriez). The GitHub repository for the code in his tutorial: [repo](https://github.com/JoeyDeVries/LearnOpenGL.)
+
+## Copyright
+
+Notwithstanding the acknowledgement above, and unless otherwise noted, the copyright of the material in this guide to Java and JOGL is held by Dr Steve Maddock, University of Sheffield, 2025.
