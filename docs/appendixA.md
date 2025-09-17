@@ -39,7 +39,7 @@ Steps:
 
 Decide where you will develop your Java and JOGL programs, e.g. c:\com3503 or c:\com4503 or c:\com6503 or c:\modules\com3503 or however you have organised files for the different modules you take. 
 
-Open a command prompt window in your working folder. Now that you have opened a command line window, you are ready to run programs. As an example, from Chapter 2 of the downloaded code:
+Open a command prompt window in your working folder (e.g. type 'cmd' in the folder line at the top of the file viewer or in the windows search box. Note this is **not** a Windows PowerShell.). Now that you have opened a command line window, you are ready to run programs. As an example, from Chapter 2 of the downloaded code:
 
 `C:\com3503>javac -cp c:/jogl25/jar/jogl-all.jar;c:/jogl25/jar/gluegen-rt.jar;. A01.java`
 
@@ -47,7 +47,7 @@ Open a command prompt window in your working folder. Now that you have opened a 
 
 This is a lot to type every time you run a program. Instead, you can create a batch file or use a system like Visual Studio Code. 
 
-** Batch file **
+**Batch file**
 
 Create a text file called jc.bat which contains the following (on two lines):
 
@@ -70,6 +70,56 @@ and the program can be run using
 
 `j A01`
 
+There will be a few extra complications in later chapters with regards jar files, but this will suffice for now.
+
+**Visual Studio Code**
+
+This is slightly more complicated. 
+
+Drag the folder you are working in into Visual Studio Code, e.g. drag the folder ch2_initial into Visual Studio Code.
+
+Click on one of the main program files, e.g. A01.java. This will create a Java Projects view in the bottom left hand corner of the window. 
+
+Click on the three horizontal dots next to `JAVA PROJECTS` and select Configure Classpath. Select the Libraries option. Click on '+ Add Library...'. 
+
+Navigate to wherever you put the jar files for JOGL (e.g. in C:\jog25\jar). Select gluegen-rt.jar, gluegen-rt-natives-windows-amd64.jar, jogl-all.jar, jogl-all-natives-windows-amd64.jar.
+
+Then click on 'Apply Settings'.
+
+Next, click on the left hand icon menu option that contains a picture of a bug on top of a triangle. This is Run and Debug. Below the Run and Debug button, there is the option 'create a launch.json file'. Click on this. In the pop-up, select 'Java' as the debugger. This will then create a launch.json file for your project.
+
+For each program created in the launch.json file, you need to add an extra line in the configuration. As an example, the following:
+
+```
+{
+    "type": "java",
+    "name": "A01",
+    "request": "launch",
+    "mainClass": "A01",
+    "projectName": "ch2_initial_85e1897d"
+},
+```
+
+becomes
+
+```
+{
+    "type": "java",
+    "name": "A01",
+    "request": "launch",
+    "mainClass": "A01",
+    "projectName": "ch2_initial_85e1897d",
+    "vmArgs": "--add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED"
+},
+```
+
+The configuration for each of A01, A02 and A03 should be updated in the same way. Then save the launch.json file.
+
+Returning to the JAVA PROJECTS window, you can now click on the symbol of a bug over a triangle which is next to 'ch2_initial' when you hover over it with your mouse. Clicking this will run the program. The pop-up gives you the option of running A01, A02 or A03. If there was only one main program in the folder, it would run automatically.
+
+## Mac users
+
+TO BE ADDED.............................................
 
 
 
