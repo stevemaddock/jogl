@@ -36,7 +36,7 @@ Decide where you will develop your Java and JOGL programs, e.g. c:\com3503 or c:
 
 Open a command prompt window in your working folder, e.g. if you are working on the programs in ch2_initial then that is the folder you need to be in. (Type 'cmd' in the folder line at the top of the file viewer or in the windows search box. Note this is **not** a Windows PowerShell.).
 
-Now that you have opened a command line window, you are ready to compile and run programs with javac and java, respectively. As an example, from Chapter 2 the example jogl code for the module, i.e. folder ch2_initial:
+Now that you have opened a command line window, you are ready to compile and run programs with javac and java, respectively. As an example, from Chapter 2 of the example jogl code for the module, i.e. folder ch2_initial:
 
 `javac -cp c:/jogl26/jogamp-fat.jar;. A01.java`
 
@@ -62,7 +62,7 @@ javac -cp c:/jogl26/jogamp-fat.jar;. %*
 
 This can be used to compile your java programs, e.g. `jc A01.java`. The %* means multiple parameters can be supplied to the batch file. As we are only using one, %1 could be used instead. I've chosen to use del *.class so that all your program files are recompiled. An alternative is to use a build manager like Maven or Gradle to control which files need recompiling.
 
-Create a second text file called j.bat that contains the following (all on one line):
+Create a second text file called j.bat that contains the following (all on one long line - scroll right to see the full line):
 
 ```
 java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl26/jogamp-fat.jar;. %*
@@ -88,7 +88,7 @@ Then click on 'Apply Settings'.
 
 Next, click on the left hand icon menu option that contains a picture of a bug on top of a triangle. This is the option to Run and Debug. In the pop-up, below the Run and Debug button, there is the option 'create a launch.json file'. Click on this. In the pop-up, select 'Java' as the debugger. This will then create a launch.json file for your project, which is added to your list of files.
 
-Open the launch.json file. For each program listed in the launch.json file, you need to add an extra line in the configuration. As an example, the following (which is part of the ch2_initial folder you dragged into Visual Studio Code):
+Open the launch.json file. For each program listed in the launch.json file, you need to add an extra line in the configuration. As an example, the following (A01.java is part of the ch2_initial folder you dragged into Visual Studio Code):
 
 ```
 {
@@ -113,8 +113,6 @@ becomes
 },
 ```
 
-This 
-
 The configuration for each of A01, A02 and A03 should be updated in the same way. (Typically, we will have only one main java file in each folder, so this approach will suffice. When there are multiple programs, it would be better to set it once for all of them, which should be possible although I haven't tried this yet.) Then save the launch.json file. (Note: your projectName will be different - it is automatically set up by Visual Studio Code and will contain a random string attached to the main name.)
 
 Returning to the JAVA PROJECTS window, you can now click on the symbol of a bug over a triangle which is next to 'ch2_initial' when you hover over it with your mouse. Clicking this will run the program. The pop-up gives you the option of running A01, A02 or A03. If there was only one main program in the folder, it would run automatically.
@@ -127,11 +125,11 @@ Same as Windows PC above
 
 ### Step 2: Installation
 
-The downloaded file jogamp-fat.jar needs to be placed somewhere in the file system. I chose /users/stevemaddock/jogl26/jogamp-fat.jar. You would repalce 'stevemaddock' with the name you use on your Mac. You can also put it somewhere else on your system (e.g. in the same folder that you will develop your java programs in) but you will then need to adjust the instructions given below.
+The downloaded file 'jogamp-fat.jar' needs to be placed somewhere in the file system. I chose /users/stevemaddock/jogl26/jogamp-fat.jar. You would repalce 'stevemaddock' with the name you use on your Mac. You can also put it somewhere else on your system (e.g. in the same folder that you will develop your java programs in) but you will then need to adjust the instructions given below.
 
 ### Step 3: Running programs
 
-Decide where you will develop your Java and JOGL programs. I'll use 'path' in the following instructions, but you would replace this with the full path of where you are stored java programs in your file hierarchy. 
+Decide where you will develop your Java and JOGL programs, i.e. which folder in the folder hierarchy on your system. 
 
 Open a terminal in the same folder as your java programs, e.g. if you are working on the programs in ch2_initial then that is the folder you need to be in.
 
@@ -167,7 +165,7 @@ Before you can use this shell script, you need to make it executable:
 chmod u+x jc.sh
 ```
 
-This will make the shell script executable for you the 'user'. Be careful you don;t make it executable to others. (You should read up on the chmod command if you are unsure what it does.)
+This will make the shell script executable for you the '**u**ser'. Be careful you don;t make it executable to others. (You should read up on the chmod command if you are unsure what it does.)
 
 You can check the permissions for the file by using `ls -al` which will list all the files in the current folder as well as all their permission settings.
 
