@@ -39,7 +39,8 @@ public class SG08_GLEventListener implements GLEventListener {
     gl.glEnable(GL.GL_CULL_FACE); // default is 'not enabled'
     gl.glCullFace(GL.GL_BACK);    // default is 'back', assuming CCW
     initialise(gl);
-    startTime = getSeconds();
+    lightStartTime = getSeconds();
+    robotStartTime = getSeconds();
   }
   
   /* Called to indicate the drawing surface has been moved and/or resized  */
@@ -123,13 +124,28 @@ public class SG08_GLEventListener implements GLEventListener {
     light.render(gl);
 
     floor.render(gl);
-    if (animation) {
+    if (animation && updateRobot()) {
       for (Robot r : robot) {
         r.updatePosition(Floor.FLOOR_MIN, Floor.FLOOR_MAX);
       }
     }
     for (Robot r : robot) {
       r.render(gl);
+    }
+  }
+
+  // ***************************************************
+
+  // robot time control
+
+  private boolean updateRobot() {
+    double elapsedTime = getSeconds()-robotStartTime;
+    if (elapsedTime > 0.1) {
+      robotStartTime = getSeconds();
+      return true;
+    } 
+    else {
+      return false;
     }
   }
 
@@ -144,10 +160,12 @@ public class SG08_GLEventListener implements GLEventListener {
    
   public void startAnimation() {
     animation = true;
+    robotStartTime = getSeconds()-robotPauseTime;
   }
    
   public void stopAnimation() {
     animation = false;
+    robotPauseTime = getSeconds()-robotStartTime;
   }
 
   // **********************************
@@ -156,7 +174,7 @@ public class SG08_GLEventListener implements GLEventListener {
 
     // The light's position is continually being changed, so needs to be calculated for each frame.
   private Vec3 getLightPosition() {
-    double elapsedTime = getSeconds()-startTime;
+    double elapsedTime = getSeconds()-lightStartTime;
     float x = 7.0f*(float)(Math.sin(Math.toRadians(elapsedTime*50)));
     float y = 5.4f;
     float z = 7.0f*(float)(Math.cos(Math.toRadians(elapsedTime*50)));
@@ -168,8 +186,10 @@ public class SG08_GLEventListener implements GLEventListener {
   /* TIME
    */ 
   
-  private double startTime;
-  
+  private double lightStartTime;
+  private double robotStartTime;
+  private double robotPauseTime = robotStartTime;
+
   private double getSeconds() {
     return System.currentTimeMillis()/1000.0;
   }
