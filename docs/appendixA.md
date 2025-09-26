@@ -165,13 +165,13 @@ Before you can use this shell script, you need to make it executable:
 chmod u+x jc.sh
 ```
 
-This will make the shell script e**x**ecutable for you the '**u**ser'. Be careful you don;t make it executable to others. (You should read up on the chmod command if you are unsure what it does.)
+This will make the shell script e**x**ecutable for you the '**u**ser'. Be careful you don't make it executable to others. (You should read up on the chmod command if you are unsure what it does.)
 
-You can check the permissions for the file by using `ls -al` which will list all the files in the current folder as well as all their permission settings.
+You can check the permissions for the file by using `ls -al` which will list all the files in the current folder as well as all their permissions settings.
 
 You can now compile your java programs using `./jc.sh A01.java`.
 
-Create a second text file called j.sh that contains the following (all on one line):
+Create a second text file called j.sh that contains the following (all on one long line - scroll right to see the full line):
 
 ```
 java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp /users/stevemaddock/jogl26/jogamp-fat.jar;. %*
@@ -201,7 +201,7 @@ An alternative is to download 'jogamp-all-platforms.7z' by following the zip lin
 
 # OLD
 
-The instructions below have been superceded. They are included here as they have been tried and tested in recent years and do work. However, the instructions given above are much more flexible and mean that recent versions of java can be used.
+The instructions below for Java 11 users have been superceded. They are included here as they have been tried and tested in recent years and do work. However, the instructions given above are much more flexible and mean that recent versions of java can be used.
 
 ## Java version
 
