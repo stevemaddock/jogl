@@ -1,8 +1,0 @@
-{
-  "java.project.sourcePaths": [
-    "."
-  ],
-  "java.project.referencedLibraries": [
-    "c:\\jogl26\\jogamp-fat.jar"
-  ]
-}
