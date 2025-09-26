@@ -165,7 +165,7 @@ Before you can use this shell script, you need to make it executable:
 chmod u+x jc.sh
 ```
 
-This will make the shell script executable for you the '**u**ser'. Be careful you don;t make it executable to others. (You should read up on the chmod command if you are unsure what it does.)
+This will make the shell script e**x**ecutable for you the '**u**ser'. Be careful you don;t make it executable to others. (You should read up on the chmod command if you are unsure what it does.)
 
 You can check the permissions for the file by using `ls -al` which will list all the files in the current folder as well as all their permission settings.
 
