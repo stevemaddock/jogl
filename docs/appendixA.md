@@ -197,6 +197,10 @@ An alternative is to download 'jogamp-all-platforms.7z' by following the zip lin
 
 ---
 
+---
+
+---
+
 # OLD
 
 The instructions below have been superceded. They are included here as they have been tried and tested in recent years and do work. However, the instructions given above are much more flexible and mean that recent versions of java can be used.
