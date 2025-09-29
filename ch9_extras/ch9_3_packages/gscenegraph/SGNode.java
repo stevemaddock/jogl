@@ -1,7 +1,4 @@
-package gscenegraph;
-
 import gmaths.*;
-
 import java.util.ArrayList;
 import com.jogamp.opengl.*;
 
@@ -15,6 +12,10 @@ public class SGNode {
     children = new ArrayList<SGNode>();
     this.name = name;
     worldTransform = new Mat4(1);
+  }
+
+  public Mat4 getWorldTransform() {
+    return worldTransform;
   }
 
   public void addChild(SGNode child) {

@@ -14,6 +14,10 @@ public class SGNode {
     worldTransform = new Mat4(1);
   }
 
+  public Mat4 getWorldTransform() {
+    return worldTransform;
+  }
+
   public void addChild(SGNode child) {
     children.add(child);
   }
