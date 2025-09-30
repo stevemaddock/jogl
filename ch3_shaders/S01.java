@@ -5,6 +5,13 @@ import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.util.FPSAnimator;
 
+/**
+ * This class creates a window with an OpenGL context.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class S01 extends JFrame {
   
   private static final int WIDTH = 1024;

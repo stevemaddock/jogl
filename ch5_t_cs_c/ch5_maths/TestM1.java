@@ -1,5 +1,12 @@
 import gmaths.*;
 
+/**
+ * Testing the maths classes
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.0 (01/10/2017)
+ */
+
 public class TestM1 {
     
   public static void main(String[] args) {

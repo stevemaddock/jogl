@@ -7,7 +7,14 @@ import com.jogamp.opengl.util.glsl.*;
 import com.jogamp.opengl.util.texture.*;
 import com.jogamp.opengl.util.texture.awt.*;
 import com.jogamp.opengl.util.texture.spi.JPEGImage;
-  
+
+/**
+ * This class is a GLEventListener to be used with the T04 class.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class T04_GLEventListener implements GLEventListener {
   
   private static final boolean DISPLAY_SHADERS = false;

@@ -4,7 +4,15 @@ import java.nio.file.Paths;
 import java.nio.charset.Charset;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.util.glsl.*;  
-  
+
+/**
+ * This class represents a shader program in OpenGL.
+ * Based on the LearnOpenGL tutorial at https://learnopengl.com/Getting-started/Shaders
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class Shader {
   
   private static final boolean DISPLAY_SHADERS = false;

@@ -4,7 +4,14 @@ import com.jogamp.opengl.*;
 import com.jogamp.opengl.util.*;
 import com.jogamp.opengl.util.awt.*;
 import com.jogamp.opengl.util.glsl.*;
-  
+
+/**
+ * This class handles OpenGL events for the A03 application.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class A03_GLEventListener implements GLEventListener {
   
   private static final boolean DISPLAY_SHADERS = false;

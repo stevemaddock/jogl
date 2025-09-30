@@ -8,6 +8,13 @@ import com.jogamp.opengl.*;
 
 import com.jogamp.opengl.util.texture.*;
 
+/**
+ * A class for managing textures. Mip-mapping is turned on.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class TextureLibrary {
   
   private Map<String,Texture> textures;

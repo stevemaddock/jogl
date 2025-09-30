@@ -1,7 +1,14 @@
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.util.*;
 import com.jogamp.opengl.util.awt.*;
-  
+
+/**
+ * This class handles OpenGL events for the A01 application.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class A01_GLEventListener implements GLEventListener {
   
   /* The constructor is not used to initialise anything in this example */

@@ -5,6 +5,13 @@ import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.util.FPSAnimator;
 
+/**
+ * Creates a window and OpenGL context for the T05_GLEventListener.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class T05 extends JFrame {
   
   private static final int WIDTH = 1024;

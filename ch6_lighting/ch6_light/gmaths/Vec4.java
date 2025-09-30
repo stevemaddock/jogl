@@ -1,5 +1,13 @@
 package gmaths;
 
+/**
+ * A class for a 4D vector.
+ * This includes four components: x, y, z, and w.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.0 (01/10/2017)
+ */
+
 public final class Vec4 {
   public float x;
   public float y;

@@ -18,6 +18,13 @@ import com.jogamp.opengl.util.FPSAnimator;
                                     // etc.
                                     // Later examples will use wildcards.
 
+/**
+ * Opening a blank window using JOGL and Swing.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class A01 extends JFrame {   // A subclass of JFrame.
 
   private static final int WIDTH = 1024;

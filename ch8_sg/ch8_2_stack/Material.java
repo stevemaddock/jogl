@@ -1,7 +1,7 @@
 import gmaths.*;
 import com.jogamp.opengl.util.texture.*;
 
- /**
+/**
  * This class stores the Material properties for a Mesh
  *
  * @author    Dr Steve Maddock

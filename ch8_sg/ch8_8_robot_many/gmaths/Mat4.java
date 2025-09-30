@@ -1,5 +1,12 @@
 package gmaths;
 
+/**
+ * A class for a 4x4 matrix.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.0 (01/10/2017)
+ */
+
 public class Mat4 {   // row column formulation
 
   private float[][] values;

@@ -8,6 +8,13 @@ import com.jogamp.opengl.*;
 
 import com.jogamp.opengl.util.texture.*;
 
+/**
+ * This class manages a library of textures for OpenGL.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class TextureLibrary {
   
   private Map<String,Texture> textures;

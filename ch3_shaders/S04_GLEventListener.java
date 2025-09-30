@@ -4,7 +4,14 @@ import com.jogamp.opengl.*;
 import com.jogamp.opengl.util.*;
 import com.jogamp.opengl.util.awt.*;
 import com.jogamp.opengl.util.glsl.*;
-  
+
+/**
+ * This class implements GLEventListener to handle OpenGL events.
+ *
+ * @author    Dr Steve Maddock
+ * @version   1.1 (26/10/2025)
+ */
+
 public class S04_GLEventListener implements GLEventListener {
   
   private static final boolean DISPLAY_SHADERS = false;
