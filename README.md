@@ -28,4 +28,4 @@ Parts of this guide, particularly the early chapters, draw inspiration from Joey
 
 ## Copyright
 
-Notwithstanding the acknowledgement above, and unless otherwise noted, the copyright of the material in this guide to Java and JOGL is held by Dr Steve Maddock, University of Sheffield, 2025.
+Notwithstanding the acknowledgement above, and unless otherwise noted, the copyright of the material in this guide to Java and JOGL, including all the program code, is held by Dr Steve Maddock, University of Sheffield, 2025.
