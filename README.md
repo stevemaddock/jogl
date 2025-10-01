@@ -32,4 +32,4 @@ Notwithstanding the acknowledgement above, and unless otherwise noted, the copyr
 
 ## Note
 
-Not all of the program code has a comment listing me as the author. I will be updating this as the semester progresses.
+Not all of the program code has a comment listing me as the author. I will add some author notes to the code files as the semester progresses.
