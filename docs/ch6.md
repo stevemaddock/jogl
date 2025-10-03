@@ -37,6 +37,6 @@ The fourth section looks a specific effect that shows how to use the fragment sh
 
 In the program examples for this chapter, I've used separate folders as we progress through the programs. It is important to keep the code in separate folders. This is because some of the classes are updated from folder to folder - a version in one folder will not necessarily work in another folder.
 
-Now that the programs are becoming a little more complicated, it is worth compiling all the java classes when you make changes: javac *.java, and then running the specific program, java ProgName. (Java doesn't necessarily recompile a class that has had a minor change if it is not referred to from the main class being compiled. Thus, compiling all classes is safest. An even safer approach is to delete all the class files before compiling: del *.class. This would, of course, be inefficient for a large system. A more professional approach would be to a class dependency tool.)
+Now that the programs are becoming a little more complicated, it is worth compiling all the java classes when you make changes: javac *.java, and then running the specific program, java ProgName. (Java doesn't necessarily recompile a class that has had a minor change if it is not referred to from the main class being compiled. Thus, compiling all classes is safest. An even safer approach is to delete all the class files before compiling: del *.class. This would, of course, be inefficient for a large system. A more professional approach would be to use a build automation tool.)
 
 [main menu](../README.md)
