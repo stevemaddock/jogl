@@ -117,6 +117,8 @@ The configuration for each of A01, A02 and A03 should be updated in the same way
 
 Returning to the JAVA PROJECTS window, you can now click on the symbol of a bug over a triangle which is next to 'ch2_initial' when you hover over it with your mouse. Clicking this will run the program. The pop-up gives you the option of running A01, A02 or A03. If there was only one main program in the folder, it would run automatically.
 
+---
+
 ## Mac users
 
 ### Step 1: Download JOGL
@@ -135,7 +137,7 @@ Open a terminal in the same folder as your java programs, e.g. if you are workin
 
 Now you are ready to compile and run programs with javac and java, respectively. As an example, from Chapter 2 of the example jogl code for the module, i.e. ch2_initial:
 
-`javac -cp /users/stevemaddock/jogl26/jogamp-fat.jar;. A01.java`
+`javac -cp /users/stevemaddock/jogl26/jogamp-fat.jar:. A01.java`
 
 The -cp argument is short for classpath and tells the java compiler where to find relevant classes that are required for the program. These are wrapped in the jogamp-fat.jar file. The '.' is important as it says that there are classes in the current folder - this is needed so that javac and java know to look in the current folder for the programs you have just compiled.
 
@@ -174,7 +176,7 @@ You can now compile your java programs using `./jc.sh A01.java`.
 Create a second text file called j.sh that contains the following (all on one long line - scroll right to see the full line):
 
 ```
-java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp /users/stevemaddock/jogl26/jogamp-fat.jar;. %*
+java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp /users/stevemaddock/jogl26/jogamp-fat.jar;. $1
 ```
 Note I have used the path to where I have stored the jogamp-fat.jar file on my system.
 
