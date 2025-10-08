@@ -93,50 +93,6 @@ public class Mat4 {   // row column formulation
     return result;
   }
 
-  // See https://www.geometrictools.com/Documentation/LaplaceExpansionTheorem.pdf
-  public static Mat4 inverse(Mat4 m) {
-    float s0 = m.values[0][0] * m.values[1][1] - m.values[1][0] * m.values[0][1];
-    float s1 = m.values[0][0] * m.values[1][2] - m.values[1][0] * m.values[0][2];
-    float s2 = m.values[0][0] * m.values[1][3] - m.values[1][0] * m.values[0][3];
-    float s3 = m.values[0][1] * m.values[1][2] - m.values[1][1] * m.values[0][2];
-    float s4 = m.values[0][1] * m.values[1][3] - m.values[1][1] * m.values[0][3];
-    float s5 = m.values[0][2] * m.values[1][3] - m.values[1][2] * m.values[0][3];
-
-    float c5 = m.values[2][2] * m.values[3][3] - m.values[3][2] * m.values[2][3];
-    float c4 = m.values[2][1] * m.values[3][3] - m.values[3][1] * m.values[2][3];
-    float c3 = m.values[2][1] * m.values[3][2] - m.values[3][1] * m.values[2][2];
-    float c2 = m.values[2][0] * m.values[3][3] - m.values[3][0] * m.values[2][3];
-    float c1 = m.values[2][0] * m.values[3][2] - m.values[3][0] * m.values[2][2];
-    float c0 = m.values[2][0] * m.values[3][1] - m.values[3][0] * m.values[2][1];
-
-    // Should check for 0 determinant
-    float invdet = 1.0f / (s0 * c5 - s1 * c4 + s2 * c3 + s3 * c2 - s4 * c1 + s5 * c0);
-
-    Mat4 b = new Mat4();
-
-    b.values[0][0] = ( m.values[1][1] * c5 - m.values[1][2] * c4 + m.values[1][3] * c3) * invdet;
-    b.values[0][1] = (-m.values[0][1] * c5 + m.values[0][2] * c4 - m.values[0][3] * c3) * invdet;
-    b.values[0][2] = ( m.values[3][1] * s5 - m.values[3][2] * s4 + m.values[3][3] * s3) * invdet;
-    b.values[0][3] = (-m.values[2][1] * s5 + m.values[2][2] * s4 - m.values[2][3] * s3) * invdet;
-
-    b.values[1][0] = (-m.values[1][0] * c5 + m.values[1][2] * c2 - m.values[1][3] * c1) * invdet;
-    b.values[1][1] = ( m.values[0][0] * c5 - m.values[0][2] * c2 + m.values[0][3] * c1) * invdet;
-    b.values[1][2] = (-m.values[3][0] * s5 + m.values[3][2] * s2 - m.values[3][3] * s1) * invdet;
-    b.values[1][3] = ( m.values[2][0] * s5 - m.values[2][2] * s2 + m.values[2][3] * s1) * invdet;
-
-    b.values[2][0] = ( m.values[1][0] * c4 - m.values[1][1] * c2 + m.values[1][3] * c0) * invdet;
-    b.values[2][1] = (-m.values[0][0] * c4 + m.values[0][1] * c2 - m.values[0][3] * c0) * invdet;
-    b.values[2][2] = ( m.values[3][0] * s4 - m.values[3][1] * s2 + m.values[3][3] * s0) * invdet;
-    b.values[2][3] = (-m.values[2][0] * s4 + m.values[2][1] * s2 - m.values[2][3] * s0) * invdet;
-
-    b.values[3][0] = (-m.values[1][0] * c3 + m.values[1][1] * c1 - m.values[1][2] * c0) * invdet;
-    b.values[3][1] = ( m.values[0][0] * c3 - m.values[0][1] * c1 + m.values[0][2] * c0) * invdet;
-    b.values[3][2] = (-m.values[3][0] * s3 + m.values[3][1] * s1 - m.values[3][2] * s0) * invdet;
-    b.values[3][3] = ( m.values[2][0] * s3 - m.values[2][1] * s1 + m.values[2][2] * s0) * invdet;
-
-    return b; 
-  }
-  
   public float[] toFloatArrayForGLSL() {  // col by row
     float[] f = new float[16];
     for (int j=0; j<4; ++j) {
