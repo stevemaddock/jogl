@@ -178,7 +178,7 @@ You can now compile your java programs using `./jc.sh A01.java`.
 Create a second text file called j.sh that contains the following (all on one long line - scroll right to see the full line):
 
 ```
-java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp /users/stevemaddock/jogl26/jogamp-fat.jar;. $1
+java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp /users/stevemaddock/jogl26/jogamp-fat.jar:. $1
 ```
 Note I have used the path to where I have stored the jogamp-fat.jar file on my system.
 
