@@ -4,7 +4,7 @@
 
 # NEW (for 25/26)
 
-## Setting up
+## A1. Setting up
 
 ### Overview
 1. Download the correct version of JOGL - this is the same for PC and Mac users. I haven't been able to test for Linux users, but would welcome feedback from anyone who is a Linux user.
@@ -13,7 +13,9 @@
 
 I'll go through each of these stages in more detail, first for Windows PC users, then for Mac users. 
 
-## Windows PC users
+---
+
+## A2. Windows PC users
 
 I'll start with installing JOGL and then running programs from the command line. Then, I'll describe how to configure Visual Studio Code if you prefer to use that.
 
@@ -72,7 +74,7 @@ The program can then be run using `j A01`. Again, %* could be replaced by %1. No
 
 In later chapters more jar files may be needed, e.g. we will create a gmaths package in chapter 5 and this can then be wrapped into a jar file which can then be added to the list of jar files in the above commands. e.g. name.jar;name2.jar;name3.jar.
 
-**Visual Studio Code**
+**Visual Studio Code for Windows PC users**
 
 This is slightly more complicated. 
 
@@ -119,7 +121,7 @@ Returning to the JAVA PROJECTS window, you can now click on the symbol of a bug 
 
 ---
 
-## Mac users
+## A3. Mac users
 
 ### Step 1: Download JOGL
 
@@ -184,16 +186,22 @@ Again change the executable permissions: `chmod u+x j.sh`
 
 The program can then be run using `./j.sh A01`.
 
-**Visual Studio Code** 
+--- 
+
+**Visual Studio Code for Mac users** 
 
 The instructions are the same as for Windows PC above (with adjustments for the path where jogamp-fat.jar is stored).
 
+---
 
-## jogamp-fat.jar
+## A4. jogamp-fat.jar
 
 The JogAmp project discourages the use of jogamp-fat.jar because it increases deployment size, removes valuable metadata for bug reporting, and adds unnecessary native library files for unsupported platforms.
 
 An alternative is to download 'jogamp-all-platforms.7z' by following the zip link under 'Builds / Downloads, 2.6.0' at https://jogamp.org/. This is then unzipped to find the relevant jar files for your system. The two important ones for us are jogl-all.jar and gluegen-rt.jar. In addition, gluegen-rt-natives-windows-amd64.jar and jogl-all-natives-windows-amd64.jar are required for windows PC users (irrespective of whether you have intel, amd or nvidia hardware). Similarly, for mac users, you also need gluegen-rt-natives-macosx-universal.jar and jogl-all-natives-macosx-universal.jar. With these all in a jar folder, the configuration instructions above would replace jogamp-fat.jar with jogl-all.jar and gluegen-rt.jar only.
+
+
+**end**
 
 ---
 
