@@ -158,7 +158,7 @@ Create a text file called jc.sh which contains the following (on two lines):
 
 ```
 rm *.class
-javac -cp /users/stevemaddock/jogl26/jogamp-fat.jar;. $1
+javac -cp /users/stevemaddock/jogl26/jogamp-fat.jar:. $1
 ```
 
 The $1 is the parameter supplied to the shell script. I've chosen to use rm *.class so that all your program files are recompiled. An alternative is to use a build manager like Maven or Gradle to control which files need recompiling.
