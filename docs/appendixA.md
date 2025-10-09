@@ -143,7 +143,7 @@ Now you are ready to compile and run programs with javac and java, respectively.
 
 The -cp argument is short for classpath and tells the java compiler where to find relevant classes that are required for the program. These are wrapped in the jogamp-fat.jar file. The '.' is important as it says that there are classes in the current folder - this is needed so that javac and java know to look in the current folder for the programs you have just compiled.
 
-`java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp /users/stevemaddock/jogl26/jogamp-fat.jar;. A01`
+`java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp /users/stevemaddock/jogl26/jogamp-fat.jar:. A01`
 
 The --add-exports settings mean we can use JOGL with more recent versions of Java (which have increased policing measures related to access of classes within a jar file so need to be told to ignore these extra measures). 
 
