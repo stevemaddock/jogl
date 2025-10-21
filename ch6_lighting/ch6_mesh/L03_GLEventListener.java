@@ -86,7 +86,7 @@ public class L03_GLEventListener implements GLEventListener {
   public void initialise(GL3 gl) {
     cube = new Mesh(gl, Sphere.vertices, Sphere.indices);
     light = new Mesh(gl, Sphere.vertices, Sphere.indices);
-   
+
     shaderCube = new Shader(gl, "assets/shaders/vs_standard.txt", "assets/shaders/fs_standard_0t.txt");
     
     shaderLight = new Shader(gl, "assets/shaders/vs_light_01.txt", "assets/shaders/fs_light_01.txt");
