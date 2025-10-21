@@ -18,12 +18,11 @@ Figure 6.1 summarises where we are at with regards the complexity of our program
   <strong>Figure 6.1.</strong> Transferring data from CPU to GPU
 </p>
 
-This chapter is composed of four main sections:
+This chapter is composed of three main sections:
 
 1. [The Phong reflection model](ch6_1.md)
 2. [A Mesh class](ch6_2.md)
 3. [Adding texture](ch6_3.md)
-4. [Extra: posterise](ch6_4.md)
 
 The first section will introduce a light into the scene and describe the implementation of the components of the Phong reflection model in the fragment shader.
 
