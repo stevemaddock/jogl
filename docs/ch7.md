@@ -27,7 +27,7 @@ Figure 7.1 shows the Model, Renderer and Light classes that will be developed.
 
 <p align="center">
   <img src="ch7_img/ch7_3_classes.png" alt="the collection of classes" width="500"><br>
-  <strong>Figure 7.1.</strong> The collection of classes (TO BE UPDATED)
+  <strong>Figure 7.1.</strong> The collection of classes
 </p>
 
 
