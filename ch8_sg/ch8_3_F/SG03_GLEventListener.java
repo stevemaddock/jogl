@@ -137,7 +137,7 @@ public class SG03_GLEventListener implements GLEventListener {
     m = Mat4.multiply(m, Mat4Transform.translate(0,0.5f,0));
     SGTransformNode lowerCubeTransform = new SGTransformNode("some transforms", m);
     SGModelNode lowerCubeShape = new SGModelNode("cubeLower", cubeLower);
-    SGTransformNode translateToTop = new SGTransformNode("translate(0,4,0)",Mat4Transform.translate(0,0,0));
+    SGTransformNode translateToTop = new SGTransformNode("translate(0,1,0)",Mat4Transform.translate(0,1,0));
     SGNameNode upperCuboid = new SGNameNode("upper cuboid");
     m = Mat4Transform.scale(0.6f,3.5f,0.6f);
     m = Mat4.multiply(m, Mat4Transform.translate(0,0.5f,0));
