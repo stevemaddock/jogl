@@ -1,1 +1,0 @@
-"C:\Program Files\Java\jdk-11\bin\java" %1
