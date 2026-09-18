@@ -2,8 +2,6 @@
 
 # Appendix A
 
-# NEW (for 25/26)
-
 ## A1. Setting up
 
 ### Overview
