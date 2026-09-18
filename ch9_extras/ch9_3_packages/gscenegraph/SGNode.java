@@ -1,3 +1,5 @@
+package gscenegraph;
+
 import gmaths.*;
 import java.util.ArrayList;
 import com.jogamp.opengl.*;
