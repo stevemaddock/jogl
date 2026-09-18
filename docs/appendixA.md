@@ -2,6 +2,8 @@
 
 # Appendix A
 
+# 2026/27 IMPORTANT: Need to update VScode instructions as these have changed.
+
 ## A1. Setting up
 
 ### Overview
