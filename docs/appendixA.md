@@ -5,11 +5,12 @@
 ## A1. Setting up
 
 ### Overview
-1. Download the correct version of JOGL - this is the same for PC and Mac users. I haven't been able to test for Linux users, but would welcome feedback from anyone who is a Linux user.
+
+1. Download the correct version of JOGL - this is the same for PC and Mac users. (I haven't been able to test for Linux users, but would welcome feedback from anyone who is a Linux user.)
 2. Install the correct parts of the downloaded file - the aim here is to put the jar file(s) in a folder such that when you compile and run files they can be correctly linked.
 3. Compile and run the first test program.
 
-I'll go through each of these stages in more detail, first for Windows PC users, then for Mac users. 
+I'll go through each of these stages in more detail, first for Windows PC users, then for Mac users.
 
 ---
 
@@ -19,7 +20,7 @@ I'll start with installing JOGL and then running programs from the command line.
 
 ### Step 1: Download JOGL
 
-- Visit the jogamp site: (https://jogamp.org/)
+- Visit the jogamp site: ([Direct link](https://jogamp.org/))
 - Find the heading 'Builds/Downloads'
 - Click on the link for 2.6.0 'fat' which takes you to a list of jar and zip files to download
 - Download 'jogamp-fat.jar' ([Direct link](https://jogamp.org/deployment/jogamp-current/fat/))
