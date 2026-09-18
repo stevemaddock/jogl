@@ -12,6 +12,8 @@
 
 I'll go through each of these stages in more detail, first for Windows PC users, then for Mac users.
 
+There is then some further common information in Sections A4 and A5.
+
 ---
 
 ## A2. Windows PC users
@@ -199,3 +201,9 @@ The instructions are the same as for Windows PC above (with adjustments for the 
 The JogAmp project discourages the use of jogamp-fat.jar because it increases deployment size, removes valuable metadata for bug reporting, and adds unnecessary native library files for unsupported platforms.
 
 An alternative is to download 'jogamp-all-platforms.7z' by following the zip link under 'Builds / Downloads, 2.6.0' at <https://jogamp.org/>. This is then unzipped to find the relevant jar files for your system. The two important ones for us are jogl-all.jar and gluegen-rt.jar. In addition, gluegen-rt-natives-windows-amd64.jar and jogl-all-natives-windows-amd64.jar are required for windows PC users (irrespective of whether you have intel, amd or nvidia hardware). Similarly, for mac users, you also need gluegen-rt-natives-macosx-universal.jar and jogl-all-natives-macosx-universal.jar. With these all in a jar folder, the configuration instructions above would replace jogamp-fat.jar with jogl-all.jar and gluegen-rt.jar only.
+
+## A5. Folder hierarchy issues in VSC
+
+When using Visual Studio Code, you may run into some path issues. For example, if you load a full chapter into visual studio code, e.g. ch6_lighting, then you will have a series of subfolders: ch6_light, ch6_mesh, ch6_posterise, ch6_texture. Each of these subfolders has a subfolder called gmaths that contains a set of maths classes which are part of a package called gmaths. When you try to compile a program inside, say, ch6_light from a terminal, then gmaths will automatically be found. If you instead try to compile it in visual studio code, gmaths will not be found. That is because the top level folder that you loaded into visual studio code is ch6_lighting. Running a program in the subfolder ch6_light will look for gmaths in ch6_lighting.
+
+There are two simple solutions: (1) load ch6_light into visual studio code instead. Then, since that is the 'top' level folder you have loaded, gmaths will automatically be found; (2) create a jar file from gmaths and add that to the class path in the same way that jogamp-fat.jar is added to the classpath.
