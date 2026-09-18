@@ -56,7 +56,7 @@ This is a lot to type every time you run a program. Instead, you can create a ba
 
 Create a text file called jc.bat which contains the following (on two lines):
 
-```
+```bat
 del *.class
 javac -cp c:/jogl26/jogamp-fat.jar;. %*
 ```
