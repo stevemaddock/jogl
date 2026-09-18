@@ -33,7 +33,7 @@ The jogamp-fat.jar wraps everything that is needed in one file, rather than deal
 
 ### Step 3: Running programs
 
-Decide where you will develop your Java and JOGL programs, e.g. c:\com3503 or c:\com4503 or c:\com6503 or c:\modules\com3503 or however you have organised files for the different modules you take. 
+Decide where you will develop your Java and JOGL programs, e.g. c:\com3503 or c:\com4503 or c:\com6503 or c:\modules\com3503 or however you have organised files for the different modules you take.
 
 Open a command prompt window in your working folder, e.g. if you are working on the programs in ch2_initial then that is the folder you need to be in. (Type 'cmd' in the folder line at the top of the file viewer or in the windows search box. Note this is **not** a Windows PowerShell.).
 
@@ -45,14 +45,14 @@ The -cp argument is short for classpath and tells the java compiler where to fin
 
 `java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl26/jogamp-fat.jar;. A01`
 
-The --add-exports settings mean we can use JOGL with more recent versions of Java (which have increased policing measures related to access of classes within a jar file so need to be told to ignore these extra measures). 
+The --add-exports settings mean we can use JOGL with more recent versions of Java (which have increased policing measures related to access of classes within a jar file so need to be told to ignore these extra measures).
 
-This is a lot to type every time you run a program. Instead, you can create a batch file or use a system like Visual Studio Code. 
+This is a lot to type every time you run a program. Instead, you can create a batch file or use a system like Visual Studio Code.
 
 > [!TIP]
 > You can check which version of Java you are using, by typing 'javac -version' and 'java -version' at the Windows command window prompt.
 
-**Batch file**
+#### Batch file
 
 Create a text file called jc.bat which contains the following (on two lines):
 
