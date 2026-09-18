@@ -65,7 +65,7 @@ This can be used to compile your java programs, e.g. `jc A01.java`. The %* means
 
 Create a second text file called j.bat that contains the following (all on one long line - scroll right to see the full line):
 
-```
+```bat
 java --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED -cp c:/jogl26/jogamp-fat.jar;. %*
 ```
 
@@ -73,15 +73,15 @@ The program can then be run using `j A01`. Again, %* could be replaced by %1. No
 
 In later chapters more jar files may be needed, e.g. we will create a gmaths package in chapter 5 and this can then be wrapped into a jar file which can then be added to the list of jar files in the above commands. e.g. name.jar;name2.jar;name3.jar.
 
-**Visual Studio Code for Windows PC users**
+#### Visual Studio Code for Windows PC users
 
-This is slightly more complicated. 
+This is slightly more complicated.
 
 Drag the folder you are working in into Visual Studio Code, e.g. drag the folder ch2_initial into Visual Studio Code.
 
-Click on one of the main program files, e.g. A01.java. This will create a Java Projects view in the bottom left hand corner of the window. 
+Click on one of the main program files, e.g. A01.java. This will create a Java Projects view in the bottom left hand corner of the window.
 
-Click on the three horizontal dots next to `JAVA PROJECTS` (hover over this to see the dots) and select Configure Classpath. Select the Libraries option. Click on '+ Add Library...'. 
+Click on the three horizontal dots next to `JAVA PROJECTS` (hover over this to see the dots) and select Configure Classpath. Select the Libraries option. Click on '+ Add Library...'.
 
 Navigate to wherever you put the jar files for JOGL (e.g. in C:\jog26). Select jogamp-fat.jar.
 
@@ -91,7 +91,7 @@ Next, click on the left hand icon menu option that contains a picture of a bug o
 
 Open the launch.json file. For each program listed in the launch.json file, you need to add an extra line in the configuration. As an example, the following (A01.java is part of the ch2_initial folder you dragged into Visual Studio Code):
 
-```
+```json
 {
     "type": "java",
     "name": "A01",
@@ -103,7 +103,7 @@ Open the launch.json file. For each program listed in the launch.json file, you 
 
 becomes
 
-```
+```json
 {
     "type": "java",
     "name": "A01",
