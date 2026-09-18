@@ -3,6 +3,7 @@
     "gmaths",
     "javac",
     "jogamp",
-    "JOGL"
+    "JOGL",
+    "stevemaddock"
   ]
 }
