@@ -83,44 +83,56 @@ This is slightly more complicated.
 
 Drag the folder you are working in into Visual Studio Code, e.g. drag the folder ch2_initial into Visual Studio Code.
 
-Click on one of the main program files, e.g. A01.java. This will create a Java Projects view in the bottom left hand corner of the window.
+Click on one of the main program files, e.g. A01.java. 
 
-Click on the three horizontal dots next to `JAVA PROJECTS` (hover over this to see the dots) and select Configure Classpath. Select the Libraries option. Click on '+ Add Library...'.
+The aim is to create a Java Projects view in the bottom left hand corner of the window. This may happen automatically depending on how you have configured your VSCode environment. 
+If it doesn't, then there are a number of options to make it happen. You may see a message at the top of the VSCode window that asks you to manage (and then trust) the folder you have loaded. This may then create the Java Projects view that is required in the bottom left of the window. Alternatively, you may have to install an Extension Pack for Java (e.g. I have successfully used the one by Microsoft). This should then create the Java Projects view that is required once you have installed the Extension Pack and selected the file A01.java.
+
+Click on the three horizontal dots next to `Java Projects` (hover over this to see the dots) and select Configure Classpath. Select the Libraries option. Click on '+ Add Library...'.
 
 Navigate to wherever you put the jar files for JOGL (e.g. in C:\jog26). Select jogamp-fat.jar.
 
 Then click on 'Apply Settings'.
 
+You then need to select 'Configure Java Runtime'. Within the window that opens you need to select the JDK that you have installed on your system. I am testing this in JavaSE-21 which I have installed in C:\Program Files\Java\jdk-21. You may have a more recent version of Java installed on your machine. You also need to configure 'Compiler' in this window. This needs to be set to produce 'Bytecode version:' 21 using the dropdown menu, to match the version of Java you selected earlier. Don't forget to click 'Apply Settings'. 
+
 Next, click on the left hand icon menu option that contains a picture of a bug on top of a triangle. This is the option to Run and Debug. In the pop-up, below the Run and Debug button, there is the option 'create a launch.json file'. Click on this. In the pop-up, select 'Java' as the debugger. This will then create a launch.json file for your project, which is added to your list of files.
 
-Open the launch.json file. For each program listed in the launch.json file, you need to add an extra line in the configuration. As an example, the following (A01.java is part of the ch2_initial folder you dragged into Visual Studio Code):
+The launch.json file will look like the following:
 
 ```json
 {
-    "type": "java",
-    "name": "A01",
-    "request": "launch",
-    "mainClass": "A01",
-    "projectName": "ch2_initial_85e1897d"
-},
+  // ...
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    }
+  ]
+}
 ```
 
-becomes
+This indicates that the program that is currently selected in the files window, e.g. A01.java, will be the one that is run. You need to add an extra line in the configuration:
 
 ```json
-{
-    "type": "java",
-    "name": "A01",
-    "request": "launch",
-    "mainClass": "A01",
-    "projectName": "ch2_initial_85e1897d",
-    "vmArgs": "--add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED"
-},
+"configurations": [
+    
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}",
+      "vmArgs": "--add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports java.desktop/sun.awt=ALL-UNNAMED"
+    }
+  ]
+    
 ```
 
-The configuration for each of A01, A02 and A03 should be updated in the same way. (Typically, we will have only one main java file in each folder, so this approach will suffice. When there are multiple programs, it would be better to set it once for all of them, which should be possible although I haven't tried this yet.) Then save the launch.json file. (Note: your projectName will be different - it is automatically set up by Visual Studio Code and will contain a random string attached to the main name.)
-
-Returning to the JAVA PROJECTS window, you can now click on the symbol of a bug over a triangle which is next to 'ch2_initial' when you hover over it with your mouse. Clicking this will run the program. The pop-up gives you the option of running A01, A02 or A03. If there was only one main program in the folder, it would run automatically.
+This configuration will run which ever 'current file' is selected in the editor window when you select the option to run and debug (the picture of a bug on top of a triangle). It is also possible to define multiple configurations to run specific programs in specific ways. I'll leave you to explore that if you need it.
 
 ---
 
