@@ -2,7 +2,7 @@
 
 # Appendix A
 
-# 2026/27 IMPORTANT: Need to update VScode instructions as these have changed.
+## Warning: Different versions of VSCode can produce different issues. Version 1.138.0 was used when I wrote the following text. Using the command window / terminal approaches outlined below is usually foolproof.
 
 ## A1. Setting up
 
