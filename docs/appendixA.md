@@ -14,7 +14,7 @@
 
 I'll go through each of these stages in more detail, first for Windows PC users, then for Mac users.
 
-There is then some further common information in Sections A4 and A5.
+There is then some further common information in Sections A4 onwards.
 
 ---
 
@@ -218,6 +218,10 @@ An alternative is to download 'jogamp-all-platforms.7z' by following the zip lin
 
 ## A5. Folder hierarchy issues in VSC
 
-When using Visual Studio Code, you may run into some path issues. For example, if you load a full chapter into visual studio code, e.g. ch6_lighting, then you will have a series of subfolders: ch6_light, ch6_mesh, ch6_posterise, ch6_texture. Each of these subfolders has a subfolder called gmaths that contains a set of maths classes which are part of a package called gmaths. When you try to compile a program inside, say, ch6_light from a terminal, then gmaths will automatically be found. If you instead try to compile it in visual studio code, gmaths will not be found. That is because the top level folder that you loaded into visual studio code is ch6_lighting. Running a program in the subfolder ch6_light will look for gmaths in ch6_lighting.
+When using VSCode, you may run into some path issues. For example, if you load a full chapter into visual studio code, e.g. ch6_lighting, then you will have a series of subfolders: ch6_light, ch6_mesh, ch6_posterise, ch6_texture. Each of these subfolders has a subfolder called gmaths that contains a set of maths classes which are part of a package called gmaths. When you try to compile a program inside, say, ch6_light from a terminal, then gmaths will automatically be found. If you instead try to compile it in visual studio code, gmaths will not be found. That is because the top level folder that you loaded into visual studio code is ch6_lighting. Running a program in the subfolder ch6_light will look for gmaths in ch6_lighting.
 
 There are two simple solutions: (1) load ch6_light into visual studio code instead. Then, since that is the 'top' level folder you have loaded, gmaths will automatically be found; (2) create a jar file from gmaths and add that to the class path in the same way that jogamp-fat.jar is added to the classpath.
+
+## A6. Compatibility issues
+
+When using VSCode, you may run into an issue with some of the JOGL import commands underline in wavy red lines, e.g. com.jogamp.opengl.*; This appears to be caused by a compatibility issue between the VSCode extensions: Extension Pack for Java (by Microsoft) and  Java Platform Extension for Visual Studio Code (by Oracle). If you disable the Oracle version, the red wavy underlining will disappear.
