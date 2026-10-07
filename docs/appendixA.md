@@ -8,7 +8,7 @@
 
 ### Overview
 
-1. Download the correct version of JOGL - this is the same for PC and Mac users. (I haven't been able to test for Linux users, but would welcome feedback from anyone who is a Linux user.)
+1. Download the correct version of JOGL - this is the same for PC and Mac users. (Linux update, 7 Oct 2026: I have been informed by Robin, a Linux user, that the JOGL version / fat JAR file described below works for Linux too.)
 2. Install the correct parts of the downloaded file - the aim here is to put the jar file(s) in a folder such that when you compile and run files they can be correctly linked.
 3. Compile and run the first test program.
 
